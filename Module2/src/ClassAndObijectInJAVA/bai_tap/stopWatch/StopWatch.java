@@ -1,22 +1,29 @@
 package ClassAndObijectInJAVA.bai_tap.stopWatch;
 
 public class StopWatch {
-    private float startTime ;
-    private float endTime  ;
+    private long startTime ;
+    private long endTime  ;
 
-    public float getStartTime(){
+    public long getStartTime(){
          return  this.startTime ;
     }
-    public float getEndTime(){
+    public long getEndTime(){
         return this.endTime;
     }
-    public void  setStartTime( float startTime){
+    public void  setStartTime( long startTime){
         this.startTime = startTime ;
     }
-    public void  setEndTime( float endTime){
+    public void  setEndTime( long endTime){
         this.endTime = endTime ;
     }
 
-    
-
+    public void start(){
+             this.startTime = System.currentTimeMillis() ;
+    }
+    public void stop(){
+         this.endTime = System.currentTimeMillis() ;
+    }
+    public float getElapsedTime(){
+        return this.endTime  -  this.startTime;
+    }
 }
