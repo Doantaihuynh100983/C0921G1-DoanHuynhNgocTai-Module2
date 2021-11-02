@@ -17,7 +17,7 @@ public class TongDuongCheoChinhMaTran {
                 System.out.println("bạn nhập sai rồi !!");
             }
         } while (m > 10 || n > 10);
-        int array[][] = new int[m][n];
+        int[][] array = new int[m][n];
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
