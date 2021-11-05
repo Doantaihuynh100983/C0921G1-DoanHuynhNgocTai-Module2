@@ -31,8 +31,8 @@ public class MoveablePoint  extends Point{
         return "MoveablePoint{" +
                 "xSpeed=" + xSpeed +
                 ", ySpeed=" + ySpeed +
-                ", x=" + x +
-                ", y=" + y +
+                ", x=" + this.getX() +
+                ", y=" + this.getY() +
                 '}';
     }
 
@@ -42,14 +42,14 @@ public class MoveablePoint  extends Point{
     }
 
     public float[] getSpeed() {
-        float arr1[] = new float[2];
+        float[] arr1 = new float[2];
         arr1[0] = this.xSpeed;
         arr1[1] = this.ySpeed;
         return arr1;
     }
     public MoveablePoint move(){
-        x += xSpeed ;
-        y += ySpeed;
+        this.setX(this.getX()+this.xSpeed);
+        this.setY(this.getY()+this.ySpeed);
         return this;
     }
 
