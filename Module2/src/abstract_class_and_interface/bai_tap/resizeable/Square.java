@@ -18,7 +18,7 @@ public class Square extends GraphicObject{
     @Override
     public void resize(double percent) {
 
-        setCanh(getCanh() * (percent*100)/100);
+        setCanh(getCanh() * (percent+100)/100);
     }
 
     @Override

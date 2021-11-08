@@ -13,7 +13,6 @@ public class Main {
             gr1.resize(Math.random()*100);
             System.out.println("Diện tích sau khi tăng"+gr1.getArena());
 
-
         }
 
     }
