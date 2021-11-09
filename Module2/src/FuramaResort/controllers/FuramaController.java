@@ -2,6 +2,7 @@ package FuramaResort.controllers;
 
 
 
+import FuramaResort.services.CustomerServiceImpl;
 import FuramaResort.services.EmployeeServiceImpl;
 
 import java.util.Scanner;
@@ -12,6 +13,7 @@ public class FuramaController {
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
+        CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
 
         while (choice != 6) {
 
@@ -43,12 +45,15 @@ public class FuramaController {
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println(" Add new employee ");
+                                employeeServiceImpl.add();
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
                                 System.out.print("============================================\n");
-                                System.out.println("Edit employee");
+                                Scanner sc1 = new Scanner(System.in);
+                                System.out.println("Mời nhập vào vị trí index cần chỉnh sữa");
+                                int index = sc1.nextInt();
+                                employeeServiceImpl.edit(index);
                                 System.out.print("============================================\n");
                                 break;
                             case 4:
@@ -69,17 +74,20 @@ public class FuramaController {
                         switch (choice) {
                             case 1:
                                 System.out.print("============================================\n");
-                                System.out.println(" Display list customers ");
+                                customerServiceImpl.disPlay();
                                 System.out.print("============================================\n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println(" Add new customer ");
+                                customerServiceImpl.add();
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
                                 System.out.print("============================================\n");
-                                System.out.println(" Edit customer ");
+                                Scanner sc1 = new Scanner(System.in);
+                                System.out.println("Mời nhập vào vị trí index cần chỉnh sữa");
+                                    int index = sc1.nextInt();
+                                 customerServiceImpl.edit(index);
                                 System.out.print("============================================\n");
                                 break;
                             case 4:

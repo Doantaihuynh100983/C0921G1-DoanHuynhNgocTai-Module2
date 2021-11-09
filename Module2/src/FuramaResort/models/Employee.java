@@ -45,16 +45,17 @@ public class Employee  extends  Person{
     @Override
     public String toString() {
         return "Employee{" +
-                "trinhDo='" + getTrinhDo() + '\'' +
-                ", viTri='" + getViTri() + '\'' +
-                ", luong=" + getLuong() +
-                "id='" + getId() + '\'' +
-                ", hoTen='" + getHoTen() + '\'' +
-                ", ngaySinh='" + getNgaySinh() + '\'' +
-                ", gioiTinh='" + getGioiTinh() + '\'' +
-                ", soCmnd=" + getSoCmnd() +
-                ", soDienThoai=" + getSoDienThoai() +
-                ", email='" + getEmail() + '\'' +
+                "      id='" + getId() + '\'' +
+                ",     hoTen='" + getHoTen() + '\'' +
+                ",     ngaySinh='" + getNgaySinh() + '\'' +
+                ",     gioiTinh='" + getGioiTinh() + '\'' +
+                ",     soCmnd=" + getSoCmnd() +
+                ",     soDienThoai=" + getSoDienThoai() +
+                ",     email='" + getEmail() + '\'' +
+                "     trinhDo='" + getTrinhDo() + '\'' +
+                ",    viTri='" + getViTri() + '\'' +
+                ",    luong=" + getLuong() +
+
                 '}';
     }
 }
