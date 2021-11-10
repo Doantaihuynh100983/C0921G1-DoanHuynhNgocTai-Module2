@@ -117,7 +117,6 @@ public class EmployeeServiceImpl extends Employee implements Service {
 
     @Override
     public void edit(int index) {
-
         Scanner sc = new Scanner(System.in);
         for (int j = 0; j < employees.size(); j++) {
             if (j == index) {

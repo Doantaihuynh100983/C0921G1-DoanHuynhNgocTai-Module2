@@ -88,7 +88,7 @@ public class FuramaController {
                                 System.out.println("Mời nhập vào vị trí index cần chỉnh sữa");
                                     int index = sc1.nextInt();
                                  customerServiceImpl.edit(index);
-                                System.out.print("============================================\n");
+                                 System.out.print("============================================\n");
                                 break;
                             case 4:
 
