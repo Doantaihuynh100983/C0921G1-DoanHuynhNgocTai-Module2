@@ -4,7 +4,6 @@ package FuramaResort.models;
 
 
 public  abstract class Facility {
-
             private String tenDichVu;
             private double dienTichSuDung;
             private double chiPhiThue;

@@ -9,7 +9,10 @@ import java.util.Scanner;
 
 public class FuramaController {
 
-    public static void main(String[] args) {
+
+    public void menu(){
+
+
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();

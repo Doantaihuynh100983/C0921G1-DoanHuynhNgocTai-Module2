@@ -4,6 +4,7 @@ package FuramaResort.services;
 import FuramaResort.models.Employee;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl extends Employee implements Service {
@@ -107,6 +108,7 @@ public class EmployeeServiceImpl extends Employee implements Service {
         }
 
         employees.add(newEmployee);
+
         for (Employee employee : employees) {
             System.out.println(employee);
 
