@@ -10,6 +10,9 @@ public  abstract class Facility {
             private int soLuongNguoiThueToiDa;
             private String kieuThue ;
 
+    public Facility() {
+    }
+
     public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
@@ -58,4 +61,14 @@ public  abstract class Facility {
         this.kieuThue = kieuThue;
     }
 
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "tenDichVu='" + tenDichVu + '\'' +
+                ", dienTichSuDung=" + dienTichSuDung +
+                ", chiPhiThue=" + chiPhiThue +
+                ", soLuongNguoiThueToiDa=" + soLuongNguoiThueToiDa +
+                ", kieuThue='" + kieuThue + '\'' +
+                '}';
+    }
 }
