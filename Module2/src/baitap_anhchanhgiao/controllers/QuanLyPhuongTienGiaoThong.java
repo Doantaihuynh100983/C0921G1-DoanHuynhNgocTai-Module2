@@ -1,11 +1,13 @@
 package baitap_anhchanhgiao.controllers;
 
 
-
+import baitap_anhchanhgiao.models.PhuongTien;
 import baitap_anhchanhgiao.service.OtoSerViceImpl;
 import baitap_anhchanhgiao.service.XeMaySerViceImpl;
 import baitap_anhchanhgiao.service.XeTaiSerViceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class QuanLyPhuongTienGiaoThong {
@@ -16,19 +18,21 @@ public class QuanLyPhuongTienGiaoThong {
         XeMaySerViceImpl xeMaySerViceImpl = new XeMaySerViceImpl();
         XeTaiSerViceImpl xeTaiSerViceImpl = new XeTaiSerViceImpl();
 
-        while (choice != 4) {
+
+        while (choice != 5) {
 
             System.out.println("1. Thêm mới phương tiện.");
             System.out.println("2. Hiện thị phương tiện");
             System.out.println("3. Xóa phương tiện");
-            System.out.println("4. Thoát");
+            System.out.println("4. Tìm Kiếm");
+            System.out.println("5. Thoát");
 
             System.out.println("Nhập từ 1 đến 4 để chọn chức năng");
             choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    int choice1 = 0 ;
+                    int choice1 = 0;
                     while (choice1 != 4) {
                         System.out.println("1 Thêm Mới Xe Tải");
                         System.out.println("2 Thêm Mới Oto");
@@ -36,11 +40,11 @@ public class QuanLyPhuongTienGiaoThong {
                         System.out.println("4 Return main menu");
                         System.out.println("Nhập từ 1 đến 4 để thứ");
 
-                             choice1 = sc.nextInt();
+                        choice1 = sc.nextInt();
                         switch (choice1) {
                             case 1:
                                 System.out.print(" ============================================ \n");
-                                System.out.print("Thêm Mới Xe Tải \n");
+                                xeTaiSerViceImpl.add();
                                 System.out.print("============================================ \n");
                                 break;
                             case 2:
@@ -50,7 +54,7 @@ public class QuanLyPhuongTienGiaoThong {
                                 break;
                             case 3:
                                 System.out.print("============================================\n");
-                                System.out.print("Thêm Mới Xe Máy");
+                                xeMaySerViceImpl.add();
                                 System.out.print("============================================\n");
                                 break;
                             case 4:
@@ -60,7 +64,7 @@ public class QuanLyPhuongTienGiaoThong {
                     }
                     break;
                 case 2:
-                    int choice2 = 0 ;
+                    int choice2 = 0;
                     while (choice2 != 4) {
                         System.out.println("1 Hiển thị xe tải");
                         System.out.println("2 Hiện thị xe ô tô");
@@ -92,11 +96,32 @@ public class QuanLyPhuongTienGiaoThong {
                     }
                     break;
                 case 3:
-                    System.out.println("xóa");
-                    break ;
-                case 4:
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Nhập biển kiểm soát :");
+                    String bienKiemSoat = scanner.nextLine();
+                    if (otoSerViceImpl.check(bienKiemSoat) || xeMaySerViceImpl.check(bienKiemSoat)
+                            || xeTaiSerViceImpl.check(bienKiemSoat)) {
+                        System.out.println("1.Yes\n2.No");
+                        int choice22 = Integer.parseInt(scanner.nextLine());
+                        if (choice22 == 1) {
+                            otoSerViceImpl.delete(bienKiemSoat);
+                            xeMaySerViceImpl.delete(bienKiemSoat);
+                            xeTaiSerViceImpl.delete(bienKiemSoat);
+                            System.out.println("Xóa thành công\n Ấn enter để quay lại menu ");
+                            String choice3=scanner.nextLine();
+                            if(choice3.equals("")){
+                                break;
+                            }
+                        }
+
+                    }
+                    break;
+
+                case 4 :
+                    break;
+                case 5:
                     System.exit(0);
-                    break ;
+                    break;
             }
         }
     }

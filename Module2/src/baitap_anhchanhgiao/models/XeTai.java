@@ -24,8 +24,8 @@ public class XeTai  extends PhuongTien{
 
     @Override
     public String toString() {
-        return "XeTai{" + id+
-                "trongTai=" + trongTai +
-                '}';
+        return  id+ "\t" +  getBienKiemSoat() + "\t" +  getTenHangSanXuat() +"\t" + "\t" +getNamSanXuat()
+                + "\t" + "\t"  +getChuSoHuu() + "\t" +getTrongTai() ;
+
     }
 }

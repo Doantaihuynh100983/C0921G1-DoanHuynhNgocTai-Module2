@@ -16,6 +16,7 @@ public abstract class PhuongTien {
         this.chuSoHuu = chuSoHuu;
     }
 
+
     public String getBienKiemSoat() {
         return bienKiemSoat;
     }
@@ -57,4 +58,5 @@ public abstract class PhuongTien {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 '}';
     }
+
 }
