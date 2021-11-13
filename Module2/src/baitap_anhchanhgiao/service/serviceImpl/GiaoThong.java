@@ -13,7 +13,9 @@ public interface GiaoThong {
 
     boolean check(String bienKiemSoat);
 
+    boolean checkSearch(String chuSoHuu);
 
+    void search(String chuSoHuu);
 
 
 

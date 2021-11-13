@@ -39,16 +39,16 @@ public class XeTaiSerViceImpl implements XeTaiSerVice {
         xeTai1.setTrongTai(Double.parseDouble(scanner.nextLine()));
 
         xeTai.add(xeTai1);
-        for (XeTai xetai : xeTai){
-            System.out.println(xetai);
-        }
+        disPlay();
     }
 
 
 
     @Override
     public void disPlay() {
+            int id = 1 ;
             for (XeTai xetai : xeTai){
+                System.out.print(id++ + "\t");
                 System.out.println(xetai);
             }
     }
@@ -72,7 +72,25 @@ public class XeTaiSerViceImpl implements XeTaiSerVice {
         return false;
     }
 
+    @Override
+    public boolean checkSearch(String chuSoHuu) {
+            for (XeTai xetai : xeTai){
+                if (chuSoHuu.equalsIgnoreCase(xetai.getChuSoHuu())){
+                    return true;
+                }
+            }
+        return false;
+    }
 
+    @Override
+    public void search(String chuSoHuu) {
+            for (int i = 0 ; i < xeTai.size();i++){
+                if (xeTai.get(i).getChuSoHuu().equalsIgnoreCase(chuSoHuu)){
+                    System.out.println(xeTai.get(i));
+                }
+            }
+
+    }
 
 
 }

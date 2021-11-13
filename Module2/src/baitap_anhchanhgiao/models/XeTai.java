@@ -1,16 +1,16 @@
 package baitap_anhchanhgiao.models;
 
 public class XeTai  extends PhuongTien{
-    private static int idTemp = 1;
-    private int id;
+
     private double trongTai;
 
     public XeTai() {
+
     }
 
     public XeTai(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, double trongTai) {
         super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
-        this.id = idTemp++;
+
         this.trongTai = trongTai;
     }
 
@@ -24,7 +24,7 @@ public class XeTai  extends PhuongTien{
 
     @Override
     public String toString() {
-        return  id+ "\t" +  getBienKiemSoat() + "\t" +  getTenHangSanXuat() +"\t" + "\t" +getNamSanXuat()
+        return  getBienKiemSoat() + "\t" +  getTenHangSanXuat() +"\t" + "\t" +getNamSanXuat()
                 + "\t" + "\t"  +getChuSoHuu() + "\t" +getTrongTai() ;
 
     }

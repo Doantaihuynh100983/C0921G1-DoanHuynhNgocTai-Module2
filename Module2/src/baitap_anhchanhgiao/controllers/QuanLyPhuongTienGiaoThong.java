@@ -118,6 +118,15 @@ public class QuanLyPhuongTienGiaoThong {
                     break;
 
                 case 4 :
+                    Scanner scanner1 = new Scanner(System.in);
+                    System.out.println("Nhập tên chủ sỡ hữu");
+                    String chuSoHuu = scanner1.nextLine();
+                    if (xeTaiSerViceImpl.checkSearch(chuSoHuu) || xeMaySerViceImpl.checkSearch(chuSoHuu)
+                    ||otoSerViceImpl.checkSearch(chuSoHuu)){
+                        xeTaiSerViceImpl.search(chuSoHuu);
+                        xeMaySerViceImpl.search(chuSoHuu);
+                        otoSerViceImpl.search(chuSoHuu);
+                    }
                     break;
                 case 5:
                     System.exit(0);

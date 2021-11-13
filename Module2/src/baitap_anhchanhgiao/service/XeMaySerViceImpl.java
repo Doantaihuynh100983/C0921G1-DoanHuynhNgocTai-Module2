@@ -39,15 +39,15 @@ public class XeMaySerViceImpl implements XeMaySerVice {
 
 
         xeMay.add(xeMay1);
-        for (XeMay xemay : xeMay){
-            System.out.println(xemay);
-        }
+        disPlay();
 
     }
 
     @Override
     public void disPlay() {
+        int id = 1 ;
         for (XeMay xemay : xeMay){
+            System.out.println(id++ + "\t");
             System.out.println(xemay);
         }
     }
@@ -69,6 +69,25 @@ public class XeMaySerViceImpl implements XeMaySerVice {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean checkSearch(String chuSoHuu) {
+        for (XeMay xemay : xeMay){
+            if (chuSoHuu.equalsIgnoreCase(xemay.getChuSoHuu())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void search(String chuSoHuu) {
+            for (int i = 0 ; i < xeMay.size() ; i++){
+                if (xeMay.get(i).getChuSoHuu().equalsIgnoreCase(chuSoHuu)){
+                    System.out.println(xeMay.get(i));
+                }
+            }
     }
 
 }

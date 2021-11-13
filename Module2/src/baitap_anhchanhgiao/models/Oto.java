@@ -3,17 +3,15 @@ package baitap_anhchanhgiao.models;
 import java.util.ArrayList;
 
 public class Oto extends PhuongTien{
-    private static int idTemp = 1;
-    private int id;
     private int soChoNgoi;
     private String kieuXe;
 
     public Oto() {
+
     }
 
     public Oto(String bienKiemSoat, String tenHangSanXuat, int namSanXuat, String chuSoHuu, int soChoNgoi, String kieuXe) {
         super(bienKiemSoat, tenHangSanXuat, namSanXuat, chuSoHuu);
-        this.id = idTemp++;
         this.soChoNgoi = soChoNgoi;
         this.kieuXe = kieuXe;
     }
@@ -37,7 +35,7 @@ public class Oto extends PhuongTien{
     @Override
     public String toString() {
 
-        return  id + "\t" +getBienKiemSoat()+ "\t" + getTenHangSanXuat()+ "\t" + getNamSanXuat()+ "\t"
+        return   getBienKiemSoat()+ "\t" + getTenHangSanXuat()+ "\t" + getNamSanXuat()+ "\t"
                 + getChuSoHuu()+ "\t" + getSoChoNgoi()+ "\t" + getKieuXe() ;
 
     }
