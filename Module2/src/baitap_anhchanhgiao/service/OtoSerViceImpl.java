@@ -4,6 +4,7 @@ package baitap_anhchanhgiao.service;
 import baitap_anhchanhgiao.models.*;
 import baitap_anhchanhgiao.service.serviceImpl.GiaoThong;
 import baitap_anhchanhgiao.service.serviceImpl.OtoSerVice;
+import baitap_anhchanhgiao.validate.ValiDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,23 +27,16 @@ public class OtoSerViceImpl implements OtoSerVice {
 
     @Override
     public void add() {
-
+        ValiDate valiDate = new ValiDate();
         Oto newOto = new Oto();
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập biển số");
-        newOto.setBienKiemSoat(scanner.nextLine());
+        newOto.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
         System.out.println("chọn nhà sản xuất");
-        newOto.setTenHangSanXuat(hangSanXuat.hangSanXuat1());
-        System.out.println("nhập năm sản xuất");
-        newOto.setNamSanXuat(Integer.parseInt(scanner.nextLine()));
-        System.out.println("nhập chủ sỡ hữu");
-        newOto.setChuSoHuu(scanner.nextLine());
-        System.out.println("nhập số chỗ ngồi");
-        newOto.setSoChoNgoi(Integer.parseInt(scanner.nextLine()));
-        System.out.println("nhập kiểu xe");
-        newOto.setKieuXe(scanner.nextLine());
+        newOto.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        newOto.setNamSanXuat(valiDate.namSanXuat());
+        newOto.setChuSoHuu(valiDate.chuSoHuu());
+        newOto.setSoChoNgoi(valiDate.soChoNgoi());
+        newOto.setKieuXe(valiDate.kieuXe());
 
         oto.add(newOto);
         disPlay();
@@ -96,5 +90,5 @@ public class OtoSerViceImpl implements OtoSerVice {
             }
     }
 
-////////////
+
 }

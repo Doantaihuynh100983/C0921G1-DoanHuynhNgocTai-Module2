@@ -1,10 +1,9 @@
 package baitap_anhchanhgiao.service;
 
 import baitap_anhchanhgiao.models.HangSanXuat;
-import baitap_anhchanhgiao.models.PhuongTien;
-import baitap_anhchanhgiao.models.XeMay;
 import baitap_anhchanhgiao.models.XeTai;
 import baitap_anhchanhgiao.service.serviceImpl.XeTaiSerVice;
+import baitap_anhchanhgiao.validate.ValiDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,18 +24,15 @@ public class XeTaiSerViceImpl implements XeTaiSerVice {
     @Override
     public void add() {
         XeTai xeTai1 = new XeTai();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập biển kiểm soát");
-        xeTai1.setBienKiemSoat(scanner.nextLine());
-        System.out.println("Mời chọn hãng sản xuất :");
+        ValiDate valiDate = new ValiDate();
+        xeTai1.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
-        xeTai1.setTenHangSanXuat(hangSanXuat.hangSanXuat1());
-        System.out.println("nhập năm sản xuất");
-        xeTai1.setNamSanXuat(Integer.parseInt(scanner.nextLine()));
-        System.out.println("nhập chủ sỡ hữu");
-        xeTai1.setChuSoHuu(scanner.nextLine());
-        System.out.println("nhập trọng tải");
-        xeTai1.setTrongTai(Double.parseDouble(scanner.nextLine()));
+        System.out.println("chọn nhà sản xuất");
+        xeTai1.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        xeTai1.setNamSanXuat(valiDate.namSanXuat());
+        xeTai1.setChuSoHuu(valiDate.chuSoHuu());
+        xeTai1.setTrongTai(valiDate.trongTai());
+
 
         xeTai.add(xeTai1);
         disPlay();

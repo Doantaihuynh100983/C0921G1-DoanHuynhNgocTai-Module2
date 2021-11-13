@@ -2,6 +2,7 @@ package baitap_anhchanhgiao.service;
 
 import baitap_anhchanhgiao.models.*;
 import baitap_anhchanhgiao.service.serviceImpl.XeMaySerVice;
+import baitap_anhchanhgiao.validate.ValiDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +25,14 @@ public class XeMaySerViceImpl implements XeMaySerVice {
     @Override
     public void add() {
             XeMay xeMay1 = new XeMay();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập biển kiểm soát :");
-        xeMay1.setBienKiemSoat(scanner.nextLine());
-        System.out.println("Mời chọn hãng sản xuất :");
+        ValiDate valiDate = new ValiDate();
+        xeMay1.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
-        xeMay1.setTenHangSanXuat(hangSanXuat.hangSanXuat1());
-        System.out.println("Nhập năm sản xuất :");
-        xeMay1.setNamSanXuat(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Nhập chủ sỡ hữu  :");
-        xeMay1.setChuSoHuu(scanner.nextLine());
-        System.out.println("Nhập công suất  :");
-        xeMay1.setCongSuat(scanner.nextLine());
+        System.out.println("chọn nhà sản xuất");
+        xeMay1.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        xeMay1.setNamSanXuat(valiDate.namSanXuat());
+        xeMay1.setChuSoHuu(valiDate.chuSoHuu());
+        xeMay1.setCongSuat(valiDate.congSuat());
 
 
         xeMay.add(xeMay1);
@@ -47,7 +44,7 @@ public class XeMaySerViceImpl implements XeMaySerVice {
     public void disPlay() {
         int id = 1 ;
         for (XeMay xemay : xeMay){
-            System.out.println(id++ + "\t");
+            System.out.print(id++ + "\t");
             System.out.println(xemay);
         }
     }
