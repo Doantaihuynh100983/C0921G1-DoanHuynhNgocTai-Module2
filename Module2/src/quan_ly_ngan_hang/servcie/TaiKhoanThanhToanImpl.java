@@ -7,6 +7,7 @@ import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanThanhToanSevice;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     Validate valiDate = new Validate();
@@ -53,6 +54,8 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     @Override
     public void search() {
 
+
+
     }
 
 
@@ -65,4 +68,8 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
         }
         return false;
     }
+
+
+
+
 }
