@@ -3,6 +3,9 @@ package abstract_class_and_interface.bai_tap.resizeable;
 public class Circle   extends  GraphicObject{
     private double radius ;
 
+    public Circle() {
+    }
+
     public Circle(double radius) {
         this.radius = radius;
     }

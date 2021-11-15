@@ -1,5 +1,7 @@
 package abstract_class_and_interface.bai_tap.resizeable;
 
+import inheritance.bai_tap.bai4_shape.Shape;
+
 public class Main {
     public static void main(String[] args) {
         GraphicObject [] gr = new GraphicObject[3];
