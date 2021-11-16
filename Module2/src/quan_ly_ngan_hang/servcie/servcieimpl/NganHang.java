@@ -7,11 +7,11 @@ public interface NganHang {
 
     void disPlay();
 
-    void search();
+    void search(int maNganHang);
+
+    void search(String tenChuTaiKhoan);
 
     boolean checkDelete(int maNganHang);
 
-
-
-
+    boolean checkSearch(String tenChuTaiKhoan);
 }

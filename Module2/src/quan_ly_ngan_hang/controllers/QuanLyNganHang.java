@@ -1,9 +1,9 @@
 package quan_ly_ngan_hang.controllers;
 
-        import quan_ly_ngan_hang.servcie.TaiKhoanThanhToanImpl;
-        import quan_ly_ngan_hang.servcie.TaiKhoanTietKiemImpl;
+import quan_ly_ngan_hang.servcie.TaiKhoanThanhToanImpl;
+import quan_ly_ngan_hang.servcie.TaiKhoanTietKiemImpl;
 
-        import java.util.Scanner;
+import java.util.Scanner;
 
 public class QuanLyNganHang {
     TaiKhoanThanhToanImpl taiKhoanThanhToan = new TaiKhoanThanhToanImpl();
@@ -78,6 +78,30 @@ public class QuanLyNganHang {
                     break;
                 case 4:
                     System.out.println("tìm kiếm");
+                    System.out.println("1. Tìm kiếm theo tên\n" +
+                            "2.Tìm kiếm theo mã số thẻ ");
+                    Scanner scanner1 = new Scanner(System.in);
+                    int choice2 = Integer.parseInt(scanner1.nextLine());
+                    switch (choice2) {
+                        case 1:
+                            System.out.println("Nhập tên cần tìm kiếm");
+                            String tenChuTaiKhoan = scanner1.nextLine();
+                            if (taiKhoanThanhToan.checkSearch(tenChuTaiKhoan) || taiKhoanTietKiem.checkSearch(tenChuTaiKhoan)) {
+                                taiKhoanThanhToan.search(tenChuTaiKhoan);
+                                taiKhoanTietKiem.search(tenChuTaiKhoan);
+                            }
+                            break;
+                        case 2:
+                            System.out.println("Nhập mã cần tìm kiếm");
+                            int maTaiKhoan = scanner1.nextInt();
+                            if (taiKhoanThanhToan.checkDelete(maTaiKhoan) || taiKhoanTietKiem.checkDelete(maTaiKhoan)) {
+                                taiKhoanThanhToan.search(maTaiKhoan);
+                                taiKhoanTietKiem.search(maTaiKhoan);
+                            }
+                            break;
+                        case 3:
+                            break;
+                    }
                     break;
                 case 5:
                     System.exit(0);

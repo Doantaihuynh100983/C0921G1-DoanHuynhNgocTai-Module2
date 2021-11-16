@@ -28,7 +28,7 @@ public class XeTaiSerViceImpl implements XeTaiSerVice {
         xeTai1.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
         System.out.println("chọn nhà sản xuất");
-        xeTai1.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        xeTai1.setTenHangSanXuat(hangSanXuat.hangSanXuat1());
         xeTai1.setNamSanXuat(valiDate.namSanXuat());
         xeTai1.setChuSoHuu(valiDate.chuSoHuu());
         xeTai1.setTrongTai(valiDate.trongTai());

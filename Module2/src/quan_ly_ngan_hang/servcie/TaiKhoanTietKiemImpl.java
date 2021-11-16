@@ -1,6 +1,7 @@
 package quan_ly_ngan_hang.servcie;
 
 import baitap_anhchanhgiao.validate.ValiDate;
+import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.models.TaiKhoanTietKiem;
 import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanTietKiemSevice;
 import quan_ly_ngan_hang.validate.Validate;
@@ -52,14 +53,36 @@ public class TaiKhoanTietKiemImpl implements TaiKhoanTietKiemSevice {
     }
 
     @Override
-    public void search() {
-
+    public void search(int maNganHang) {
+        for (int i = 0; i < taiKhoanTietKiems.size(); i++) {
+            if (maNganHang == taiKhoanTietKiems.get(i).getMaTaiKhoan()) {
+                System.out.println(taiKhoanTietKiems.get(i));
+            }
+        }
+    }
+    @Override
+    public void search(String tenChuTaiKhoan) {
+        for (int i = 0; i < taiKhoanTietKiems.size(); i++) {
+            if ((taiKhoanTietKiems.get(i).getTenChuTaiKhoan().contains(tenChuTaiKhoan))) {
+                System.out.println(taiKhoanTietKiems.get(i));
+            }
+        }
     }
 
     @Override
     public boolean checkDelete(int maNganHang) {
         for (TaiKhoanTietKiem tietkiem : taiKhoanTietKiems) {
             if (maNganHang == tietkiem.getMaTaiKhoan()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkSearch(String tenChuTaiKhoan) {
+        for (TaiKhoanTietKiem thanhToan : taiKhoanTietKiems) {
+            if (tenChuTaiKhoan.contains(thanhToan.getTenChuTaiKhoan())) {
                 return true;
             }
         }

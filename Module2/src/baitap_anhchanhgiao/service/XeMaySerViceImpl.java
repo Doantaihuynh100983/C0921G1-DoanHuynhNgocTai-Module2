@@ -29,7 +29,7 @@ public class XeMaySerViceImpl implements XeMaySerVice {
         xeMay1.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
         System.out.println("chọn nhà sản xuất");
-        xeMay1.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        xeMay1.setTenHangSanXuat( hangSanXuat.hangSanXuat1());
         xeMay1.setNamSanXuat(valiDate.namSanXuat());
         xeMay1.setChuSoHuu(valiDate.chuSoHuu());
         xeMay1.setCongSuat(valiDate.congSuat());

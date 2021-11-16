@@ -1,7 +1,8 @@
-package java_collection_framework.bai_tap.arraylist_linkkedlist;
+package java_collection_framework.bai_tap.arraylist_linkkedlist.service;
+
+import java_collection_framework.bai_tap.arraylist_linkkedlist.modles.Product;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class ProductManager implements ProductManagerImpl {
 
     static {
         products.add(new Product("C00009", "Bánh Quy", 50.000));
-        products.add(new Product("C00009", "Bánh Quy", 50.000));
+        products.add(new Product("C00009", "Bánh Kẹo", 50.000));
         products.add(new Product("C00019", "Kẹo Ngọt", 49.000));
         products.add(new Product("C00020", "Bánh Chuối", 55.000));
 
@@ -68,7 +69,7 @@ public class ProductManager implements ProductManagerImpl {
     @Override
     public void search(String tenSanPham) {
         for (int i = 0 ; i < products.size() ; i++){
-            if (tenSanPham.contains(products.get(i).getTenSanPham())){
+            if (products.get(i).getTenSanPham().contains(tenSanPham)){
                 System.out.println(products.get(i));
             }
         }

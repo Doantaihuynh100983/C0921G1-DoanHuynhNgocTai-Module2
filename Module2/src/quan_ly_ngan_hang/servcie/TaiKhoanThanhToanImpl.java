@@ -14,7 +14,7 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     static ArrayList<TaiKhoanThanhToan> taiKhoanThanhToans = new ArrayList<>();
 
     static {
-        taiKhoanThanhToans.add(new TaiKhoanThanhToan(3333, "Tài Đoàn", "30/10/2021", 2062549999, 50.000000000));
+        taiKhoanThanhToans.add(new TaiKhoanThanhToan(496, "Tài Đoàn", "30/10/2021", 2062549999, 50.000000000));
         taiKhoanThanhToans.add(new TaiKhoanThanhToan(5611, "Minh Ca ", "31/11/2021", 333666655, 50.000000000));
         taiKhoanThanhToans.add(new TaiKhoanThanhToan(1234, "Văn Tiến ", "30/10/2020", 44455566, 50.000000000));
     }
@@ -52,10 +52,23 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     }
 
     @Override
-    public void search() {
+    public void search(int maNganHang) {
+        for (int i = 0; i < taiKhoanThanhToans.size(); i++) {
+            if (maNganHang == taiKhoanThanhToans.get(i).getMaTaiKhoan()) {
+                System.out.println(taiKhoanThanhToans.get(i));
+            }
+        }
 
 
+    }
 
+    @Override
+    public void search(String tenChuTaiKhoan) {
+        for (int i = 0; i < taiKhoanThanhToans.size(); i++) {
+            if ((taiKhoanThanhToans.get(i).getTenChuTaiKhoan().contains(tenChuTaiKhoan))) {
+                System.out.println(taiKhoanThanhToans.get(i));
+            }
+        }
     }
 
 
@@ -69,7 +82,15 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
         return false;
     }
 
-
+    @Override
+    public boolean checkSearch(String tenChuTaiKhoan) {
+        for (TaiKhoanThanhToan thanhToan : taiKhoanThanhToans) {
+            if (thanhToan.getTenChuTaiKhoan().contains(tenChuTaiKhoan)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }

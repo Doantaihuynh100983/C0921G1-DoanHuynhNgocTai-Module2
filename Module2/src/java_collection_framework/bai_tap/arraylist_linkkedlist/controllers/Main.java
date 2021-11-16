@@ -1,9 +1,11 @@
-package java_collection_framework.bai_tap.arraylist_linkkedlist;
+package java_collection_framework.bai_tap.arraylist_linkkedlist.controllers;
+
+import java_collection_framework.bai_tap.arraylist_linkkedlist.service.ProductManager;
 
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+   public void menu(){
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         ProductManager productManager = new ProductManager();
@@ -41,7 +43,7 @@ public class Main {
                     break;
                 case  5:
                     Scanner scanner2 = new Scanner(System.in);
-                    System.out.println("Nhập mã sản phẩm cần tìm kiếm");
+                    System.out.println("Nhập tên sản phẩm cần tìm kiếm");
                     String tenSanPham1 = scanner2.nextLine();
                     productManager.search(tenSanPham1);
                     break;

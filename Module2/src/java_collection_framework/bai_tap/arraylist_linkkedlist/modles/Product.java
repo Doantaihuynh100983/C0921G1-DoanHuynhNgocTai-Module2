@@ -1,4 +1,4 @@
-package java_collection_framework.bai_tap.arraylist_linkkedlist;
+package java_collection_framework.bai_tap.arraylist_linkkedlist.modles;
 
 import java.util.Comparator;
 

@@ -32,7 +32,7 @@ public class OtoSerViceImpl implements OtoSerVice {
         newOto.setBienKiemSoat( valiDate.bienKiemSoat());
         hangSanXuat.menuHangSanXuat();
         System.out.println("chọn nhà sản xuất");
-        newOto.setTenHangSanXuat( valiDate.tenHangSanXuat());
+        newOto.setTenHangSanXuat(hangSanXuat.hangSanXuat1());
         newOto.setNamSanXuat(valiDate.namSanXuat());
         newOto.setChuSoHuu(valiDate.chuSoHuu());
         newOto.setSoChoNgoi(valiDate.soChoNgoi());
