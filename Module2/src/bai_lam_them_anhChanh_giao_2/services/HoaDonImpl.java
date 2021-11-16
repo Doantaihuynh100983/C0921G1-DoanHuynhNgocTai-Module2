@@ -89,7 +89,8 @@ public class HoaDonImpl implements HoaDonService {
 
 
             }
-        }disPlayHoaDon();
+        }
+        disPlayHoaDon();
     }
 
     @Override
