@@ -15,7 +15,7 @@ public class BookingServiceImpl implements BookingService{
     }
 
     @Override
-    public void edit(int index) {
+    public void edit(String hoTen) {
 
     }
 

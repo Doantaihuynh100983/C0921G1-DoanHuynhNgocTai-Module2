@@ -7,7 +7,7 @@ import java.util.List;
 public interface FacilityService  extends Service{
     void disPlay();
     void add();
-    void edit(int index);
+    void edit(String hoTen);
 
 
 }

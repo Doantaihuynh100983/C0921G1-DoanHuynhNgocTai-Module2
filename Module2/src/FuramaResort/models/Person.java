@@ -3,7 +3,7 @@ package FuramaResort.models;
 import java.time.LocalDateTime;
 
 public abstract class Person {
-    private String id;
+
     private String hoTen;
     private String ngaySinh;
     private String gioiTinh;
@@ -14,9 +14,9 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String id, String hoTen, String ngaySinh, String gioiTinh,
+    public Person( String hoTen, String ngaySinh, String gioiTinh,
                   int soCmnd, int soDienThoai, String email) {
-        this.id = id;
+
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.gioiTinh = gioiTinh;
@@ -25,13 +25,6 @@ public abstract class Person {
         this.email = email;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getHoTen() {
         return hoTen;
@@ -84,7 +77,6 @@ public abstract class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id='" + id + '\'' +
                 ", hoTen='" + hoTen + '\'' +
                 ", ngaySinh='" + ngaySinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +

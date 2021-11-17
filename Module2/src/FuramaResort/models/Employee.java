@@ -10,9 +10,9 @@ public class Employee  extends  Person{
     public Employee() {
     }
 
-    public Employee(String id, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai,
+    public Employee(String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai,
                     String email, String trinhDo, String viTri, double luong) {
-        super(id, hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email);
+        super(hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email);
         this.trinhDo = trinhDo;
         this.viTri = viTri;
         this.luong = luong;
@@ -44,18 +44,7 @@ public class Employee  extends  Person{
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "      id='" + getId() + '\'' +
-                ",     hoTen='" + getHoTen() + '\'' +
-                ",     ngaySinh='" + getNgaySinh() + '\'' +
-                ",     gioiTinh='" + getGioiTinh() + '\'' +
-                ",     soCmnd=" + getSoCmnd() +
-                ",     soDienThoai=" + getSoDienThoai() +
-                ",     email='" + getEmail() + '\'' +
-                "     trinhDo='" + getTrinhDo() + '\'' +
-                ",    viTri='" + getViTri() + '\'' +
-                ",    luong=" + getLuong() +
-
-                '}';
+        return getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() +'\t'+
+                getSoDienThoai()+'\t' + getEmail() + '\t' + getTrinhDo() + '\t' + getViTri() + '\t'+ getLuong() ;
     }
 }

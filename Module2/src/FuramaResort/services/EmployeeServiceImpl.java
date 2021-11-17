@@ -12,9 +12,9 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     static ArrayList<Employee> employees = new ArrayList<>();
 
     static {
-        Employee employee1 = new Employee("123", "Tài đoàn", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-        Employee employee2 = new Employee("123", "Tài đoàn", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-        Employee employee3 = new Employee("123", "Tài đoàn", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
+        Employee employee1 = new Employee("Tài đoàn 1", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
+        Employee employee2 = new Employee("Tài đoàn 2", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
+        Employee employee3 = new Employee("Tài đoàn 3", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
 
 
         employees.add(employee1);
@@ -28,15 +28,16 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
     public EmployeeServiceImpl(String id, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai,
                                String email, String trinhDo, String viTri, double luong) {
-        super(id, hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email, trinhDo, viTri, luong);
+        super(hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email, trinhDo, viTri, luong);
 
     }
 
 
     @Override
     public void disPlay() {
-
+        int id = 1 ;
         for (Employee employee : employees) {
+            System.out.print("Epm" + id++ +"\t");
             System.out.println(employee);
 
         }
@@ -47,8 +48,6 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     public void add() {
         Employee newEmployee = new Employee();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập mã nhân viên");
-        newEmployee.setId(sc.nextLine());
         System.out.println("Nhập họ và tên");
         newEmployee.setHoTen(sc.nextLine());
         System.out.println("Nhập ngày sinh");
@@ -109,23 +108,18 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
         employees.add(newEmployee);
 
-        for (Employee employee : employees) {
-            System.out.println(employee);
-
-        }
+        disPlay();
 
 
     }
 
     @Override
-    public void edit(int index) {
+    public void edit(String hoTen) {
         Scanner sc = new Scanner(System.in);
         for (int j = 0; j < employees.size(); j++) {
-            if (j == index) {
-                System.out.println("Nhập id ");
-                String id = sc.nextLine();
+            if (employees.get(j).getHoTen().equals(hoTen)) {
                 System.out.println("Nhập họ tên ");
-                String hoTen = sc.nextLine();
+                String hoTen1 = sc.nextLine();
                 System.out.println("Nhập ngày sinh ");
                 String ngaySinh = sc.nextLine();
                 System.out.println("Nhập giới tính ");
@@ -185,8 +179,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                 }
 
 
-                employees.get(j).setId(id);
-                employees.get(j).setHoTen(hoTen);
+                employees.get(j).setHoTen(hoTen1);
                 employees.get(j).setNgaySinh(ngaySinh);
                 employees.get(j).setGioiTinh(gioiTinh);
                 employees.get(j).setSoCmnd(soCmnd);
@@ -197,11 +190,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
             }
 
         }
-
-        for (Employee employee : employees) {
-            System.out.println(employee);
-
-        }
+        disPlay();
 
 
     }

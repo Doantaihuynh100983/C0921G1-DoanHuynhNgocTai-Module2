@@ -11,9 +11,9 @@ public class CustomerServiceImpl implements CustomerService {
     static LinkedList<Customer> list = new LinkedList<>();
 
     static {
-        Customer customer1 = new Customer("123", "TÀI ĐOÀN", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer2 = new Customer("123", "TÀI ĐOÀN", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer3 = new Customer("123", "TÀI ĐOÀN", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer1 = new Customer("TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer2 = new Customer("TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer3 = new Customer("TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
 
         list.add(customer1);
         list.add(customer2);
@@ -22,7 +22,9 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void disPlay() {
+        int id = 1 ;
         for (Customer customer : list) {
+            System.out.print("CTM" + id++ +"\t");
             System.out.println(customer);
         }
     }
@@ -31,8 +33,6 @@ public class CustomerServiceImpl implements CustomerService {
     public void add() {
         Scanner sc = new Scanner(System.in);
         Customer customer = new Customer();
-        System.out.println("Mời nhập id");
-        customer.setId(sc.nextLine());
         System.out.println("Mời nhập họ tên");
         customer.setHoTen(sc.nextLine());
         System.out.println("Mời nhập ngày sinh");
@@ -70,21 +70,17 @@ public class CustomerServiceImpl implements CustomerService {
 
 
         list.add(customer);
-        for (Customer cusTomer : list) {
-            System.out.println(cusTomer);
-        }
+        disPlay();
     }
 
 
     @Override
-    public void edit(int index) {
+    public void edit(String hoTen) {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < list.size(); i++) {
-            if (i == index) {
-                System.out.println("Nhập id ");
-                String id = sc.nextLine();
+            if (list.get(i).getHoTen().equals(hoTen)) {
                 System.out.println("Nhập họ tên ");
-                String hoTen = sc.nextLine();
+                String hoTen1 = sc.nextLine();
                 System.out.println("Nhập ngày sinh ");
                 String ngaySinh = sc.nextLine();
                 System.out.println("Nhập giới tính ");
@@ -123,8 +119,8 @@ public class CustomerServiceImpl implements CustomerService {
                 }
 
 
-                list.get(i).setId(id);
-                list.get(i).setHoTen(hoTen);
+
+                list.get(i).setHoTen(hoTen1);
                 list.get(i).setNgaySinh(ngaySinh);
                 list.get(i).setGioiTinh(gioiTinh);
                 list.get(i).setSoCmnd(soCmnd);
@@ -137,10 +133,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
         }
-        for (Customer customer : list) {
-            System.out.println(customer);
-
-        }
+        disPlay();
 
 
     }

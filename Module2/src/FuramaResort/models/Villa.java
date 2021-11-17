@@ -44,15 +44,7 @@ public class Villa  extends Facility {
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "tenDichVu='" + getTenDichVu() + '\'' +
-                ", dienTichSuDung=" + getDienTichSuDung() +
-                ", chiPhiThue=" + getChiPhiThue() +
-                ", soLuongNguoiThueToiDa=" + getSoLuongNguoiThueToiDa() +
-                ", kieuThue='" + getKieuThue()+
-        "tieuChuanPhong='" + tieuChuanPhong + '\'' +
-                ", dienTichHoBoi=" + dienTichHoBoi +
-                ", soTang=" + soTang +
-                '}';
+        return  getTenDichVu() + "\t" + getDienTichSuDung()+ "\t" + getChiPhiThue() + "\t"+ getSoLuongNguoiThueToiDa()+ "\t" +
+                getKieuThue()+ "\t"+ tieuChuanPhong + "\t"+ dienTichHoBoi + "\t"+ soTang ;
     }
 }

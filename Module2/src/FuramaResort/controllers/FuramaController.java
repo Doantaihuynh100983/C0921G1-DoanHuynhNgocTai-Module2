@@ -56,8 +56,8 @@ public class FuramaController {
                             case 3:
                                 System.out.print("============================================\n");
                                 Scanner sc1 = new Scanner(System.in);
-                                System.out.println("Mời nhập vào vị trí index cần chỉnh sữa");
-                                int index = sc1.nextInt();
+                                System.out.println("Mời nhập vào tên chỉnh sữa");
+                                String index = sc1.nextLine();
                                 employeeServiceImpl.edit(index);
                                 System.out.print("============================================\n");
                                 break;
@@ -90,8 +90,8 @@ public class FuramaController {
                             case 3:
                                 System.out.print("============================================\n");
                                 Scanner sc1 = new Scanner(System.in);
-                                System.out.println("Mời nhập vào vị trí index cần chỉnh sữa");
-                                    int index = sc1.nextInt();
+                                System.out.println("Mời nhập vào tên cần chỉnh sữa");
+                                    String index = sc1.nextLine();
                                  customerServiceImpl.edit(index);
                                  System.out.print("============================================\n");
                                 break;
