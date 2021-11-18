@@ -22,7 +22,7 @@ public class Room  extends Facility{
 
     @Override
     public String toString() {
-        return getTenDichVu()+ "\t" +getDienTichSuDung()+ "\t" +getChiPhiThue()+ "\t" +
+        return  "ROOM : "+getTenDichVu()+ "\t" +getDienTichSuDung()+ "\t" +getChiPhiThue()+ "\t" +
                 getSoLuongNguoiThueToiDa()+ "\t" + getKieuThue()+ "\t" +dichVuMienPhiDiKem;
     }
 }

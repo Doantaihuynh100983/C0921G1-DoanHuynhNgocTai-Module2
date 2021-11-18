@@ -33,7 +33,7 @@ public class House  extends Facility{
 
     @Override
     public String toString() {
-        return getTenDichVu() +getDienTichSuDung()+getChiPhiThue()+getSoLuongNguoiThueToiDa() +
-                getKieuThue() + tieuChuanPhong + '\'' + soTang ;
+        return  "HOUSE : "+ getTenDichVu() +"\t" +getDienTichSuDung()+"\t" +getChiPhiThue()+"\t" +getSoLuongNguoiThueToiDa()+"\t"  +
+                getKieuThue() +"\t" + tieuChuanPhong  +"\t"  + soTang ;
     }
 }

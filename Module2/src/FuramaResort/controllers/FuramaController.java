@@ -2,9 +2,9 @@ package FuramaResort.controllers;
 
 
 
-import FuramaResort.services.CustomerServiceImpl;
-import FuramaResort.services.EmployeeServiceImpl;
-import FuramaResort.services.FacilityServiceImpl;
+import FuramaResort.services.impl.CustomerServiceImpl;
+import FuramaResort.services.impl.EmployeeServiceImpl;
+import FuramaResort.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -18,6 +18,7 @@ public class FuramaController {
         Scanner sc = new Scanner(System.in);
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
 
         while (choice != 6) {
@@ -113,7 +114,7 @@ public class FuramaController {
                         switch (choice) {
                             case 1:
                                 System.out.print("============================================\n");
-
+                                facilityService.disPlay();
                                 System.out.print("============================================\n");
                                 break;
                             case 2:

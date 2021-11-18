@@ -1,22 +1,22 @@
-package FuramaResort.services;
+package FuramaResort.services.impl;
 
 
 import FuramaResort.models.Employee;
+import FuramaResort.services.EmployeeService;
 
 import java.util.ArrayList;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
-    static ArrayList<Employee> employees = new ArrayList<>();
+    static List<Employee> employees = new ArrayList<>();
 
     static {
         Employee employee1 = new Employee("Tài đoàn 1", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
         Employee employee2 = new Employee("Tài đoàn 2", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
         Employee employee3 = new Employee("Tài đoàn 3", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-
-
         employees.add(employee1);
         employees.add(employee2);
         employees.add(employee3);
@@ -32,12 +32,11 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
 
     }
 
-
     @Override
     public void disPlay() {
-        int id = 1 ;
+        int id = 1;
         for (Employee employee : employees) {
-            System.out.print("Epm" + id++ +"\t");
+            System.out.print("Epm" + id++ + "\t");
             System.out.println(employee);
 
         }
@@ -80,8 +79,6 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                 break;
 
         }
-
-
         System.out.println("Mời chọn Vị trí");
         System.out.println("1.Lễ tân, 2.phục vụ, 3.chuyên viên, 4.giám sát, 5.quản lý, 6.giám đốc");
         int choice1 = sc.nextInt();
@@ -119,21 +116,19 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
         for (int j = 0; j < employees.size(); j++) {
             if (employees.get(j).getHoTen().equals(hoTen)) {
                 System.out.println("Nhập họ tên ");
-                String hoTen1 = sc.nextLine();
+                employees.get(j).setHoTen(sc.nextLine());
                 System.out.println("Nhập ngày sinh ");
-                String ngaySinh = sc.nextLine();
+                employees.get(j).setNgaySinh(sc.nextLine());
                 System.out.println("Nhập giới tính ");
-                String gioiTinh = sc.nextLine();
+                employees.get(j).setGioiTinh(sc.nextLine());
                 System.out.println("Nhập số CMND ");
-                int soCmnd = Integer.parseInt(sc.nextLine());
+                employees.get(j).setSoCmnd(Integer.parseInt(sc.nextLine()));
                 System.out.println("Nhập số điẹn thoại ");
-                int sdt = Integer.parseInt(sc.nextLine());
+                employees.get(j).setSoDienThoai(Integer.parseInt(sc.nextLine()));
                 System.out.println("Nhập email ");
-                String email = sc.nextLine();
+                employees.get(j).setEmail(sc.nextLine());
                 System.out.println("Nhập lương");
-                double luong = Double.parseDouble(sc.nextLine());
-
-
+                employees.get(j).setLuong(Double.parseDouble(sc.nextLine()));
                 System.out.println("Mời chọn trình độ");
                 System.out.println("1.Trung cấp - 2.Cao đẳng - 3.Đại học - 4.sau đại học");
                 int choice = sc.nextInt();
@@ -152,8 +147,6 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                         break;
 
                 }
-
-
                 System.out.println("Mời chọn Vị trí");
                 System.out.println("1.Lễ tân, 2.phục vụ, 3.chuyên viên, 4.giám sát, 5.quản lý, 6.giám đốc");
                 int choice1 = sc.nextInt();
@@ -177,18 +170,8 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                         employees.get(j).setViTri("6.giám đốc");
                         break;
                 }
-
-
-                employees.get(j).setHoTen(hoTen1);
-                employees.get(j).setNgaySinh(ngaySinh);
-                employees.get(j).setGioiTinh(gioiTinh);
-                employees.get(j).setSoCmnd(soCmnd);
-                employees.get(j).setSoDienThoai(sdt);
-                employees.get(j).setEmail(email);
-                employees.get(j).setLuong(luong);
                 break;
             }
-
         }
         disPlay();
 

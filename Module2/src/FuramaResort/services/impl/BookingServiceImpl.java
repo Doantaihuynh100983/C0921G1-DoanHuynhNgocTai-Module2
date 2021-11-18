@@ -1,8 +1,9 @@
-package FuramaResort.services;
+package FuramaResort.services.impl;
 
 
+import FuramaResort.services.BookingService;
 
-public class FacilityServiceImpl implements FacilityService{
+public class BookingServiceImpl implements BookingService {
 
 
     @Override
@@ -19,4 +20,6 @@ public class FacilityServiceImpl implements FacilityService{
     public void edit(String hoTen) {
 
     }
+
+
 }

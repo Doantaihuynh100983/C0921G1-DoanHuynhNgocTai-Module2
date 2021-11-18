@@ -1,9 +1,8 @@
-package FuramaResort.services;
+package FuramaResort.services.impl;
 
+import FuramaResort.services.ContactService;
 
-public class BookingServiceImpl implements BookingService{
-
-
+public class ContactServiceImpl implements ContactService {
     @Override
     public void disPlay() {
 
