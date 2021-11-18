@@ -4,10 +4,11 @@ import FuramaResort.models.Contract;
 
 import java.util.List;
 
-public interface FacilityService  extends Service{
+public interface FacilityService{
     void disPlay();
-    void add();
-    void edit(String hoTen);
+    void addVilla();
 
+    void addRoom();
+    void addHouse();
 
 }
