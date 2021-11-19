@@ -1,6 +1,8 @@
 package FuramaResort.models;
 
-public class House  extends Facility{
+import java.util.Objects;
+
+public class House extends Facility {
     private String tieuChuanPhong;
     private int soTang;
 
@@ -33,7 +35,27 @@ public class House  extends Facility{
 
     @Override
     public String toString() {
-        return  "HOUSE : "+ getTenDichVu() +"\t" +getDienTichSuDung()+"\t" +getChiPhiThue()+"\t" +getSoLuongNguoiThueToiDa()+"\t"  +
-                getKieuThue() +"\t" + tieuChuanPhong  +"\t"  + soTang ;
+        return "HOUSE : " + getTenDichVu() + "\t" + getDienTichSuDung() + "\t" + getChiPhiThue() + "\t" + getSoLuongNguoiThueToiDa() + "\t" +
+                getKieuThue() + "\t" + tieuChuanPhong + "\t" + soTang;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return getTenDichVu().equals(house.getTenDichVu())
+                && Double.compare(house.getDienTichSuDung(), getDienTichSuDung()) == 0
+                && Double.compare(house.getChiPhiThue(), getChiPhiThue()) == 0
+                && house.getSoLuongNguoiThueToiDa() == getSoLuongNguoiThueToiDa()
+                && getKieuThue().equals(house.getKieuThue())
+                && soTang == house.soTang &&
+                tieuChuanPhong.equals(house.tieuChuanPhong);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
+                getKieuThue(), tieuChuanPhong, soTang);
     }
 }

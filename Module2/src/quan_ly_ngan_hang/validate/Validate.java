@@ -57,8 +57,7 @@ public class Validate {
         return ngayTaoTaiKhoan;
     }
 
-    //    private int soThe;
-//    private double soTienTrongThe;
+
     public int soThe() {
         int soThe;
         while (true) {

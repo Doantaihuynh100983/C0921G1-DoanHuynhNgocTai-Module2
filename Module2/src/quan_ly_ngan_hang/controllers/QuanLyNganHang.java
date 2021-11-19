@@ -1,15 +1,17 @@
 package quan_ly_ngan_hang.controllers;
 
+import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.models.TaiKhoanTietKiem;
 import quan_ly_ngan_hang.servcie.TaiKhoanThanhToanImpl;
 import quan_ly_ngan_hang.servcie.TaiKhoanTietKiemImpl;
+import quan_ly_ngan_hang.validate.NotFoundBankAccountException;
 
 import java.util.Scanner;
 
 public class QuanLyNganHang {
     TaiKhoanThanhToanImpl taiKhoanThanhToan = new TaiKhoanThanhToanImpl();
     TaiKhoanTietKiemImpl taiKhoanTietKiem = new TaiKhoanTietKiemImpl();
-    TaiKhoanTietKiem tietKiem = new TaiKhoanTietKiem();
+    TaiKhoanThanhToan taiKhoanThanhToans = new TaiKhoanThanhToan();
 
     public void menu() {
         int choice = 0;
@@ -65,6 +67,8 @@ public class QuanLyNganHang {
                         }
 
                     }
+
+
                     break;
                 case 3:
                     System.out.println("danh sách");

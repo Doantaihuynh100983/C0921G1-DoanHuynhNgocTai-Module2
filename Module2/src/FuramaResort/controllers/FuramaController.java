@@ -118,13 +118,40 @@ public class FuramaController {
                                 System.out.print("============================================\n");
                                 break;
                             case 2:
-                                System.out.print("============================================\n");
-                                System.out.println(" Add new facility ");
-                                System.out.print("============================================\n");
+                                int choice5 = 0;
+                                while (choice5 != 4) {
+                                    System.out.println("1. Add New Villa");
+                                    System.out.println("2. Add New Room");
+                                    System.out.println("3. Add New House");
+                                    System.out.println("4. Return main menu");
+                                    choice5 = sc.nextInt();
+
+                                    switch (choice5) {
+                                        case 1:
+                                            System.out.print("============================================\n");
+                                            facilityService.addVilla();
+                                            System.out.print("============================================\n");
+                                            break;
+                                        case 2:
+                                            System.out.print("============================================\n");
+                                            facilityService.addRoom();
+                                            System.out.print("============================================\n");
+                                            break;
+                                        case 3:
+                                            System.out.print("============================================\n");
+                                            facilityService.addHouse();
+                                            System.out.print("============================================\n");
+                                            break;
+                                        case 4:
+                                            break;
+                                    }
+                                }
+
                                 break;
                             case 3:
                                 System.out.print("============================================\n");
                                 System.out.println(" Display list facility maintenance");
+                                facilityService.disPlay();
                                 System.out.print("============================================\n");
                                 break;
                             case 4:

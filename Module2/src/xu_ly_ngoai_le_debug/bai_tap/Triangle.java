@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
+
 public class Triangle {
         public static int[] inputTriangleSides() throws IllegalTriangleException {
             Scanner sc = new Scanner(System.in);
