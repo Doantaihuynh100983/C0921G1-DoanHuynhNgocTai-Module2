@@ -9,7 +9,6 @@ import FuramaResort.services.FacilityService;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
@@ -33,13 +32,11 @@ public class FacilityServiceImpl implements FacilityService {
         }
         System.out.println("Số lượng Booking : " + count);
     }
-    //    String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue,
-//    String tieuChuanPhong, double dienTichHoBoi, int soTang
+
     @Override
     public void addVilla() {
-        Map<Villa , Integer> villaIntegerMap = new LinkedHashMap<>();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập tên dịch vụ");
+
+
     }
 
     @Override
@@ -51,8 +48,4 @@ public class FacilityServiceImpl implements FacilityService {
     public void addHouse() {
 
     }
-
-
-
-
 }

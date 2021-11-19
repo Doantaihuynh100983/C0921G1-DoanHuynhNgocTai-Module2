@@ -1,7 +1,5 @@
 package quan_ly_ngan_hang.servcie;
 
-import baitap_anhchanhgiao.validate.ValiDate;
-import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.models.TaiKhoanTietKiem;
 import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanTietKiemSevice;
 import quan_ly_ngan_hang.validate.Validate;
@@ -88,6 +86,5 @@ public class TaiKhoanTietKiemImpl implements TaiKhoanTietKiemSevice {
         }
         return false;
     }
-
 
 }
