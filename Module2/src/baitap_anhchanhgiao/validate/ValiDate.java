@@ -22,9 +22,16 @@ public class ValiDate {
             }
         }
         return bangKiemSoat;
-
-
     }
+
+
+
+
+
+
+
+
+
 
     public String tenHangSanXuat() {
         String tenHangSanXuat;

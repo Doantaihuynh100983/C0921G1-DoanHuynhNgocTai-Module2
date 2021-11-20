@@ -8,15 +8,15 @@ import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     CustomerServiceImpl customerService = new CustomerServiceImpl();
-    static Set<Booking> bookings = new LinkedHashSet<>();
-//    static TreeSet<Booking> bookingTreeSet = new TreeSet<>(bookings);
+    static Set<Booking> bookings = new TreeSet<>(new BookingComparator());
+
 
     static {
         bookings.add(new Booking("BK001", "20/10/2019", "30/10/2019", "CTM001", "massage", "villa"));
-        bookings.add(new Booking("BK002", "25/10/2019", "30/10/2019", "CTM002", "câu cá", "house"));
-        bookings.add(new Booking("BK003", "5/11/2019", "31/12/2019", "CTM003", "đi chơi", "room"));
-        bookings.add(new Booking("BK004", "6/1/2019", "9/10/2019", "CTM004", "massage", "villa"));
-        bookings.add(new Booking("BK004", "6/1/2019", "9/10/2019", "CTM004", "massage", "villa"));
+        bookings.add(new Booking("BK002", "25/10/2021", "30/10/2019", "CTM002", "câu cá", "house"));
+        bookings.add(new Booking("BK003", "5/11/2017", "31/12/2019", "CTM003", "đi chơi", "room"));
+        bookings.add(new Booking("BK004", "6/1/2020", "9/10/2019", "CTM004", "massage", "villa"));
+        bookings.add(new Booking("BK005", "6/1/2020", "9/10/2018", "CTM004", "massage", "villa"));
     }
 
     @Override
@@ -28,9 +28,10 @@ public class BookingServiceImpl implements BookingService {
 
 
     Scanner sc = new Scanner(System.in);
+
     @Override
     public void add() {
-            Booking booking1 = new Booking();
+        Booking booking1 = new Booking();
         System.out.println("Nhập mã booking");
         booking1.setMaBooking(sc.nextLine());
         System.out.println("Ngày Bắt Đầu");
@@ -54,8 +55,6 @@ public class BookingServiceImpl implements BookingService {
     public void edit(String hoTen) {
 
     }
-
-
 
 
 }
