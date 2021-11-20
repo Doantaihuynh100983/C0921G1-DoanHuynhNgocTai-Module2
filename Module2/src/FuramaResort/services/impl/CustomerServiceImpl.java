@@ -13,28 +13,36 @@ public class CustomerServiceImpl implements CustomerService {
     static List<Customer> customers = new LinkedList<>();
 
     static {
-        Customer customer1 = new Customer("TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer2 = new Customer("TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer3 = new Customer("TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer1 = new Customer("CTM0001","TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer2 = new Customer("CTM0002","TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
+        Customer customer3 = new Customer("CTM0003","TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
 
         customers.add(customer1);
         customers.add(customer2);
         customers.add(customer3);
     }
-
+    Scanner sc = new Scanner(System.in);
     @Override
     public void disPlay() {
-        int id = 1;
+
         for (Customer customer : customers) {
-            System.out.print("CTM" + id++ + "\t");
             System.out.println(customer);
         }
     }
 
+    public String maKhachHang(){
+            int chocie = sc.nextInt();
+            return customers.get(chocie - 1 ).getMaSo();
+    }
+
+
+
     @Override
     public void add() {
-        Scanner sc = new Scanner(System.in);
+
         Customer customer = new Customer();
+        System.out.println("Mời nhập mã số");
+        customer.setMaSo(sc.nextLine());
         System.out.println("Mời nhập họ tên");
         customer.setHoTen(sc.nextLine());
         System.out.println("Mời nhập ngày sinh");
@@ -75,9 +83,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void edit(String hoTen) {
-        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < customers.size(); i++) {
             if (customers.get(i).getHoTen().equals(hoTen)) {
+                System.out.println("Mời nhập mã số");
+                customers.get(i).setMaSo(sc.nextLine());
                 System.out.println("Nhập họ tên ");
                 customers.get(i).setHoTen(sc.nextLine());
                 System.out.println("Nhập ngày sinh ");
@@ -119,4 +128,6 @@ public class CustomerServiceImpl implements CustomerService {
         }
         disPlay();
     }
+
+
 }

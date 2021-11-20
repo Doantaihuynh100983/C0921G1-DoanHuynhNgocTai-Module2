@@ -13,7 +13,8 @@ public  abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue) {
+    public Facility( String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue) {
+
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
@@ -60,6 +61,8 @@ public  abstract class Facility {
     public void setKieuThue(String kieuThue) {
         this.kieuThue = kieuThue;
     }
+
+
 
     @Override
     public String toString() {

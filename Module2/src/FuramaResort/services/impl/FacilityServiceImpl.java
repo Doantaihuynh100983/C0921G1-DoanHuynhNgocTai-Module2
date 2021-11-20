@@ -22,7 +22,6 @@ public class FacilityServiceImpl implements FacilityService {
         myMap.put(new House("ĐI CHƠI", 50.2, 60.33, 3, "Villa", "VIP", 3), 1);
 
     }
-//    tieuChuanPhong, dienTichHoBoi, soTang
 
 
     @Override
@@ -54,6 +53,7 @@ public class FacilityServiceImpl implements FacilityService {
         villa1.setDienTichHoBoi(Double.parseDouble(scanner.nextLine()));
         System.out.println("Mời nhập số tầng");
         villa1.setSoTang(Integer.parseInt(scanner.nextLine()));
+
 
         if (myMap.containsKey(villa1)) {
             int currentValue = myMap.get(villa1);

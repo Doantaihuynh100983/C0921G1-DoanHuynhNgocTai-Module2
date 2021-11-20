@@ -1,6 +1,5 @@
 package FuramaResort.models;
 
-import java.time.LocalDateTime;
 
 public class Customer extends Person{
         private String loaiKhach;
@@ -9,9 +8,10 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String hoTen, String ngaySinh, String gioiTinh,
-                    int soCmnd, int soDienThoai, String email, String loaiKhach, String diaChi) {
-        super(hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email);
+
+    public Customer(String maSo, String hoTen, String ngaySinh, String gioiTinh, int soCmnd,
+                    int soDienThoai, String email, String loaiKhach, String diaChi) {
+        super(maSo, hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email);
         this.loaiKhach = loaiKhach;
         this.diaChi = diaChi;
     }
@@ -34,7 +34,7 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd()+'\t' + getSoDienThoai()
+        return getMaSo()+ "\t" + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd()+'\t' + getSoDienThoai()
                 + getEmail() + '\t'+ getLoaiKhach() + '\t' + getDiaChi() ;
     }
 }

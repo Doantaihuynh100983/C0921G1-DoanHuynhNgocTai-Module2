@@ -2,6 +2,7 @@ package FuramaResort.controllers;
 
 
 
+import FuramaResort.services.impl.BookingServiceImpl;
 import FuramaResort.services.impl.CustomerServiceImpl;
 import FuramaResort.services.impl.EmployeeServiceImpl;
 import FuramaResort.services.impl.FacilityServiceImpl;
@@ -19,7 +20,7 @@ public class FuramaController {
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
-
+        BookingServiceImpl bookingService = new BookingServiceImpl();
 
         while (choice != 6) {
 
@@ -174,12 +175,12 @@ public class FuramaController {
                         switch (choice1) {
                             case 1:
                                 System.out.print("============================================\n");
-                                System.out.println(" Add new booking ");
+                                bookingService.add();
                                 System.out.print("============================================\n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println(" Display list booking ");
+                                bookingService.disPlay();
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
