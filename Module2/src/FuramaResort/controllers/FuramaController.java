@@ -217,7 +217,6 @@ public class FuramaController {
                             case 1:
                                 System.out.print("============================================\n");
                                 System.out.println(" Display list customers use service ");
-                                promotionService.khachHang();
                                 System.out.print("============================================\n");
                                 break;
                             case 2:
