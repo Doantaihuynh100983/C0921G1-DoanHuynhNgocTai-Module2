@@ -13,7 +13,8 @@ import java.util.Scanner;
 
 public class OtoSerViceImpl implements OtoSerVice {
     HangSanXuat hangSanXuat = new HangSanXuat();
-    static List<Oto> oto = new ArrayList<Oto>();
+    static List<Oto> oto = new ArrayList<>();
+
 
     static {
         Oto oto1 = new Oto("43C-012.343", " HSX-001 \t" + "Toyota \t" + "Nhật Bản \t", 2019, "Nguyễn Văn A", 3, "Xe khách");

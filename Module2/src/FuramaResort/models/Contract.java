@@ -17,6 +17,9 @@ public class Contract {
 
     }
 
+    public Contract() {
+    }
+
     public String getSoHopDong() {
         return soHopDong;
     }
@@ -55,5 +58,10 @@ public class Contract {
 
     public void setMaKhachHang(String maKhachHang) {
         this.maKhachHang = maKhachHang;
+    }
+
+    @Override
+    public String toString() {
+        return  soHopDong + '\t' + maBooking +  '\t' + soTienCocTruoc +  '\t'+ tongSoTienThanhToan+  '\t' + maKhachHang  ;
     }
 }

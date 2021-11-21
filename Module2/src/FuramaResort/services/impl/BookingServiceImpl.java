@@ -9,7 +9,7 @@ import java.util.*;
 public class BookingServiceImpl implements BookingService {
     CustomerServiceImpl customerService = new CustomerServiceImpl();
     static Set<Booking> bookings = new TreeSet<>(new BookingComparator());
-
+        static List<Booking> bookingList = new ArrayList<>();
 
     static {
         bookings.add(new Booking("BK001", "20/10/2019", "30/10/2019", "CTM001", "massage", "villa"));
@@ -17,11 +17,12 @@ public class BookingServiceImpl implements BookingService {
         bookings.add(new Booking("BK003", "5/11/2017", "31/12/2019", "CTM003", "đi chơi", "room"));
         bookings.add(new Booking("BK004", "6/1/2020", "9/10/2019", "CTM004", "massage", "villa"));
         bookings.add(new Booking("BK005", "6/1/2020", "9/10/2018", "CTM004", "massage", "villa"));
+        bookingList.addAll(bookings);
     }
 
     @Override
     public void disPlay() {
-        for (Booking bookingTreeSets : bookings) {
+        for (Booking bookingTreeSets : bookingList) {
             System.out.println(bookingTreeSets);
         }
     }
@@ -56,5 +57,14 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-
+    public String maBooking(){
+        disPlay();
+        int chocie = sc.nextInt();
+        return bookingList.get(chocie -1 ).getMaBooking() ;
+    }
+    public String maKhachHang1(){
+        disPlay();
+        int chocie = sc.nextInt();
+        return bookingList.get(chocie -1 ).getMaKhachHang() ;
+    }
 }

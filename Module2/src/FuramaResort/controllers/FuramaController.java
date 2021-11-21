@@ -2,10 +2,7 @@ package FuramaResort.controllers;
 
 
 
-import FuramaResort.services.impl.BookingServiceImpl;
-import FuramaResort.services.impl.CustomerServiceImpl;
-import FuramaResort.services.impl.EmployeeServiceImpl;
-import FuramaResort.services.impl.FacilityServiceImpl;
+import FuramaResort.services.impl.*;
 
 import java.util.Scanner;
 
@@ -21,6 +18,7 @@ public class FuramaController {
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContactServiceImpl contactService = new ContactServiceImpl();
 
         while (choice != 6) {
 
@@ -185,17 +183,20 @@ public class FuramaController {
                                 break;
                             case 3:
                                 System.out.print("============================================\n");
-                                System.out.println(" Create new constracts");
+                                contactService.add();
                                 System.out.print("============================================\n");
                                 break;
                             case 4:
                                 System.out.print("============================================\n");
-                                System.out.println(" Display list contracts");
+                                contactService.disPlay();
                                 System.out.print("============================================\n");
                                 break;
                             case 5:
                                 System.out.print("============================================\n");
-                                System.out.println("Edit contracts");
+                                System.out.println("mời nhập mã bookIng cần sữa");
+                                Scanner scanner9 = new Scanner(System.in);
+                                String maBooking = scanner9.nextLine();
+                                contactService.edit(maBooking);
                                 System.out.print("============================================\n");
                                 break;
                             case 6:
