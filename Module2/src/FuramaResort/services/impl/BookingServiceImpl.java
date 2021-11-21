@@ -18,6 +18,7 @@ public class BookingServiceImpl implements BookingService {
         bookings.add(new Booking("BK004", "6/1/2020", "9/10/2019", "CTM004", "massage", "villa"));
         bookings.add(new Booking("BK005", "6/1/2020", "9/10/2018", "CTM004", "massage", "villa"));
         bookingList.addAll(bookings);
+
     }
 
     @Override
@@ -66,5 +67,10 @@ public class BookingServiceImpl implements BookingService {
         disPlay();
         int chocie = sc.nextInt();
         return bookingList.get(chocie -1 ).getMaKhachHang() ;
+    }
+
+    public String ngayBatDau(){
+        int chocie = sc.nextInt();
+        return bookingList.get(chocie -1 ).getNgayBatDau() ;
     }
 }

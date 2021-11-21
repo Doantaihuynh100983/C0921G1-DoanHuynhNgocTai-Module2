@@ -40,12 +40,15 @@ public class CandidateManager {
                         switch (choice1) {
                             case 1:
                                 System.out.print(" ============================================ \n");
-                                System.out.println("1 Add Experience ");
+                                experience.add();
                                 System.out.print("============================================ \n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println("2 Edit Experience");
+                                Scanner scanner2 = new Scanner(System.in);
+                                System.out.println("Nhập lastName cần chỉnh sữa");
+                                String lastName1 = scanner2.nextLine();
+                                experience.edit(lastName1);
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
@@ -71,12 +74,15 @@ public class CandidateManager {
                         switch (choice2) {
                             case 1:
                                 System.out.print(" ============================================ \n");
-                                System.out.println("1 Add Fresher ");
+                                fresher.add();
                                 System.out.print("============================================ \n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println("2 Edit Fresher");
+                                Scanner scanner1 = new Scanner(System.in);
+                                System.out.println("Nhập lastName cần chỉnh sữa");
+                                String lastName = scanner1.nextLine();
+                                fresher.edit(lastName);
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
@@ -102,12 +108,15 @@ public class CandidateManager {
                         switch (choice3) {
                             case 1:
                                 System.out.print(" ============================================ \n");
-                                System.out.println("1 Add Internship ");
+                                interShip.add();
                                 System.out.print("============================================ \n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println("2 Edit Internship");
+                                Scanner scanner3 = new Scanner(System.in);
+                                System.out.println("Nhập lastName cần chỉnh sữa");
+                                String lastName4 = scanner3.nextLine();
+                                fresher.edit(lastName4);
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
@@ -119,7 +128,16 @@ public class CandidateManager {
                     }
                     break;
                 case 4:
-                    System.out.println("seach");
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Mời nhập tên cần tìm kiếm ");
+                    String lastName = scanner.nextLine();
+                    if (!(experience.checkSearch(lastName) || fresher.checkSearch(lastName) ||interShip.checkSearch(lastName))) {
+                        System.out.println("Không có trong danh sách khách hàng");
+                    } else if (experience.checkSearch(lastName) || fresher.checkSearch(lastName) ||interShip.checkSearch(lastName)) {
+                        experience.searChing(lastName);
+                        fresher.searChing(lastName);
+                        interShip.searChing(lastName);
+                    }
                     break;
                 case 5:
                     System.exit(0);
