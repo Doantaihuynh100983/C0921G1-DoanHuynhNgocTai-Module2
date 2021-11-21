@@ -48,8 +48,7 @@ public class ContactServiceImpl implements ContactService {
         contractList.add(contract1);
         disPlay();
     }
-    //    String soHopDong, String maBooking,
-//    double soTienCocTruoc, double tongSoTienThanhToan, String maKhachHang
+
     @Override
     public void edit(String hoTen) {
         for (int i = 0 ; i < contractList.size() ; i++){

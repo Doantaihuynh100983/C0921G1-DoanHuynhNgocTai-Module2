@@ -6,6 +6,8 @@ import FuramaResort.models.House;
 import FuramaResort.models.Room;
 import FuramaResort.models.Villa;
 import FuramaResort.services.FacilityService;
+import FuramaResort.validate.ValidateFacility;
+
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -14,7 +16,7 @@ import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
     static Map<Facility, Integer> myMap = new LinkedHashMap<>();
-    Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
+        Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
 
     static {
         myMap.put(new Villa("Massage", 50.2, 60.33, 3, "Villa", "VIP ", 20.3, 5), 1);
@@ -33,12 +35,12 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     Scanner scanner = new Scanner(System.in);
-
+    ValidateFacility valiDate = new ValidateFacility();
     @Override
     public void addVilla() {
         Villa villa1 = new Villa();
         System.out.println("Mời nhập tên dịch vụ");
-        villa1.setTenDichVu(scanner.nextLine());
+        villa1.setTenDichVu(valiDate.tenDichVu());
         System.out.println("Mời nhập diện tích sử dụng");
         villa1.setDienTichSuDung(Double.parseDouble(scanner.nextLine()));
         System.out.println("Mời nhập chi phí thuê");
