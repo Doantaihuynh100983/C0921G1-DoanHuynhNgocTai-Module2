@@ -1,21 +1,38 @@
 package candidate.service;
 
+import candidate.common.FileUntiels;
 import candidate.models.Candidate;
 import candidate.models.Internship;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InterShipImpl implements candidateService{
-        static ArrayList<Internship> interShipC = new ArrayList<>();
-        static  {
-            interShipC.add(new Internship("Maria" , "Madeleine" , "30/5/1888" , "ĐÀ NẴNG" , 789456 , "Madeleine@gmail.com" ,"IT" , "3" , "Ngoại Ngữ"));
-            interShipC.add(new Internship("Csokán" , "Babett" , "30/5/1888" , "ĐÀ NẴNG" , 789456 , "Madeleine@gmail.com" ,"IT" , "3" , "Ngoại Ngữ"));
-            interShipC.add(new Internship("Joana" , "Filipa" , "30/5/1888" , "ĐÀ NẴNG" , 789456 , "Madeleine@gmail.com" ,"IT" , "3" , "Ngoại Ngữ"));
-            interShipC.add(new Internship("Patricia" , "Carine" , "30/5/1888" , "ĐÀ NẴNG" , 789456 , "Madeleine@gmail.com" ,"IT" , "3" , "Ngoại Ngữ"));
-        }
-//    String firstName, String lastName, String birthDate, String address, int phone,
-//    String email, String majors, String semester, String universityName
+public class InterShipImpl implements candidateService {
+//        public static final String FILE_NAME = "Module2/src/candidate/data/InterShip.csv";
+//    public static final String COMMA = ",";
+//    FileUntiels fileUntiels = new FileUntiels();
+
+
+
+    static ArrayList<Internship> interShipC = new ArrayList<>();
+
+    static {
+        interShipC.add(new Internship("Maria", "Madeleine", "30/5/1888", "ĐÀ NẴNG", 789456, "Madeleine@gmail.com", "IT", "3", "Ngoại Ngữ"));
+        interShipC.add(new Internship("Csokán", "Babett", "30/5/1888", "ĐÀ NẴNG", 789456, "Madeleine@gmail.com", "IT", "3", "Ngoại Ngữ"));
+        interShipC.add(new Internship("Joana", "Filipa", "30/5/1888", "ĐÀ NẴNG", 789456, "Madeleine@gmail.com", "IT", "3", "Ngoại Ngữ"));
+        interShipC.add(new Internship("Patricia", "Carine", "30/5/1888", "ĐÀ NẴNG", 789456, "Madeleine@gmail.com", "IT", "3", "Ngoại Ngữ"));
+    }
+
+//    public void writeFile() {
+//        String line = null;
+//        for (Internship experience : interShipC) {
+//            line = experience.getFirstName() + COMMA + experience.getLastName() + COMMA + experience.getBirthDate() + COMMA +
+//                    experience.getAddress() + COMMA + experience.getPhone() + COMMA + experience.getEmail() + COMMA +
+//                    experience.getMajors() + COMMA + experience.getSemester() + COMMA + experience.getUniversityName();
+//            fileUntiels.writeFile(FILE_NAME, line);
+//        }
+//    }
+
     Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -47,15 +64,15 @@ public class InterShipImpl implements candidateService{
 
     @Override
     public void disPlay() {
-            for (Internship inter : interShipC){
-                System.out.println(inter);
-            }
+        for (Internship inter : interShipC) {
+            System.out.println(inter);
+        }
     }
 
     @Override
     public void edit(String lastName) {
-        for (int i = 0 ; i < interShipC.size() ; i++){
-            if (interShipC.get(i).getLastName().equals(lastName)){
+        for (int i = 0; i < interShipC.size(); i++) {
+            if (interShipC.get(i).getLastName().equals(lastName)) {
                 System.out.println("Enter firstName ");
                 interShipC.get(i).setFirstName(scanner.nextLine());
                 System.out.println("Enter lastName ");
@@ -82,8 +99,8 @@ public class InterShipImpl implements candidateService{
 
     @Override
     public void searChing(String lastName) {
-        for (int i = 0 ; i < interShipC.size(); i++){
-            if (interShipC.get(i).getLastName().equals(lastName)){
+        for (int i = 0; i < interShipC.size(); i++) {
+            if (interShipC.get(i).getLastName().equals(lastName)) {
                 System.out.println(interShipC.get(i));
             }
         }
@@ -91,8 +108,8 @@ public class InterShipImpl implements candidateService{
 
     @Override
     public boolean checkSearch(String lastName) {
-        for (int i = 0 ; i < interShipC.size();i++){
-            if (interShipC.get(i).getLastName().equals(lastName)){
+        for (int i = 0; i < interShipC.size(); i++) {
+            if (interShipC.get(i).getLastName().equals(lastName)) {
                 return true;
             }
         }

@@ -2,13 +2,16 @@ package candidate.service;
 
 import candidate.models.Candidate;
 import candidate.models.Fresher;
+import test_doc_ghi_file.FileUntiels;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FresherImpl  implements candidateService{
 
-
+//    public static final String FILE_NAME = "Module2/src/candidate/data/Fresher.csv";
+//    public static final String COMMA = ",";
+//    FileUntiels fileUntiels = new FileUntiels();
     static ArrayList<Fresher> freshers = new ArrayList<>();
     static {
          freshers.add(new Fresher("Barbosa" , "De Souza" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
@@ -16,6 +19,17 @@ public class FresherImpl  implements candidateService{
          freshers.add(new Fresher("Calderon" , "Cuevas" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
          freshers.add(new Fresher("Casulari" , "Motta" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
     }
+
+//    public void writeFile(){
+//        String line = null;
+//        for (Fresher experience : freshers){
+//            line = experience.getFirstName() + COMMA + experience.getLastName() + COMMA + experience.getBirthDate() + COMMA +
+//                    experience.getAddress() + COMMA +    experience.getPhone() + COMMA +   experience.getEmail() + COMMA +
+//                    experience.getGraduation_date() + COMMA +   experience.getGraduation_rank() + COMMA +   experience.getEducation();
+//            fileUntiels.writeFile(FILE_NAME,line);
+//        }
+//    }
+
     Scanner scanner = new Scanner(System.in);
 
     @Override

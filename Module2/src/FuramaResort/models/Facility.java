@@ -1,20 +1,19 @@
 package FuramaResort.models;
 
 
-
-
-public  abstract class Facility {
-            private String tenDichVu;
-            private double dienTichSuDung;
-            private double chiPhiThue;
-            private int soLuongNguoiThueToiDa;
-            private String kieuThue ;
+public abstract class Facility {
+    private String maDichVu;
+    private String tenDichVu;
+    private double dienTichSuDung;
+    private double chiPhiThue;
+    private int soLuongNguoiThueToiDa;
+    private String kieuThue;
 
     public Facility() {
     }
 
-    public Facility( String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue) {
-
+    public Facility( String maDichVu,String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue) {
+        this.maDichVu = maDichVu;
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;
@@ -62,12 +61,19 @@ public  abstract class Facility {
         this.kieuThue = kieuThue;
     }
 
+    public String getMaDichVu() {
+        return maDichVu;
+    }
 
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
+    }
 
     @Override
     public String toString() {
         return "Facility{" +
-                "tenDichVu='" + tenDichVu + '\'' +
+                "maDichVu='" + maDichVu + '\'' +
+                ", tenDichVu='" + tenDichVu + '\'' +
                 ", dienTichSuDung=" + dienTichSuDung +
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoiThueToiDa=" + soLuongNguoiThueToiDa +

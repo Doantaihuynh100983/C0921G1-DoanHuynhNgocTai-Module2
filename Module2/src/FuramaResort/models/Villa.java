@@ -12,9 +12,9 @@ public class Villa extends Facility {
     public Villa() {
     }
 
-    public Villa(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa, String kieuThue,
-                 String tieuChuanPhong, double dienTichHoBoi, int soTang) {
-        super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiThueToiDa, kieuThue);
+    public Villa(String maDichVu, String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiThueToiDa,
+                 String kieuThue, String tieuChuanPhong, double dienTichHoBoi, int soTang) {
+        super(maDichVu, tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiThueToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.dienTichHoBoi = dienTichHoBoi;
         this.soTang = soTang;
@@ -46,7 +46,7 @@ public class Villa extends Facility {
 
     @Override
     public String toString() {
-        return "VILLA : " + getTenDichVu() + "\t" + getDienTichSuDung() + "\t" + getChiPhiThue() + "\t" + getSoLuongNguoiThueToiDa() + "\t" +
+        return "VILLA : "+ getMaDichVu()+"\t" + getTenDichVu() + "\t" + getDienTichSuDung() + "\t" + getChiPhiThue() + "\t" + getSoLuongNguoiThueToiDa() + "\t" +
                 getKieuThue() + "\t" + tieuChuanPhong + "\t" + dienTichHoBoi + "\t" + soTang;
     }
 
@@ -55,7 +55,7 @@ public class Villa extends Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Villa villa = (Villa) o;
-        return  getTenDichVu().equals(villa.getTenDichVu())
+        return getTenDichVu().equals(villa.getTenDichVu())
                 && Double.compare(villa.getDienTichSuDung(), getDienTichSuDung()) == 0
                 && Double.compare(villa.getChiPhiThue(), getChiPhiThue()) == 0
                 && villa.getSoLuongNguoiThueToiDa() == getSoLuongNguoiThueToiDa()
@@ -70,7 +70,6 @@ public class Villa extends Facility {
         return Objects.hash(getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
                 getKieuThue(), tieuChuanPhong, dienTichHoBoi, soTang);
     }
-
 
 
 }

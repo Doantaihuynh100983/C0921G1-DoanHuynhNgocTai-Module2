@@ -1,9 +1,9 @@
 package FuramaResort.models;
 
 
-public class Customer extends Person{
-        private String loaiKhach;
-        private String diaChi;
+public class Customer extends Person {
+    private String loaiKhach;
+    private String diaChi;
 
     public Customer() {
     }
@@ -34,7 +34,7 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return getMaSo()+ "\t" + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd()+'\t' + getSoDienThoai()
-                + getEmail() + '\t'+ getLoaiKhach() + '\t' + getDiaChi() ;
+        return getMaSo() + "\t" + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() + '\t' + getSoDienThoai()
+                + getEmail() + '\t' + getLoaiKhach() + '\t' + getDiaChi();
     }
 }

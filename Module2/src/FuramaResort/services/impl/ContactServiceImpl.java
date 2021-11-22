@@ -9,12 +9,12 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class ContactServiceImpl implements ContactService {
-        BookingServiceImpl bookingService = new BookingServiceImpl();
+    BookingServiceImpl bookingService = new BookingServiceImpl();
     CustomerServiceImpl customerService = new CustomerServiceImpl();
 
     Scanner scanner = new Scanner(System.in);
     static Queue<Contract> contracts = new LinkedList<>();
-    static  List<Contract> contractList = new LinkedList<>();
+    static List<Contract> contractList = new LinkedList<>();
 
     static {
         contracts.add(new Contract("0001", "BK001", 5.3, 5.0, "CTM0001"));
@@ -51,8 +51,8 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public void edit(String hoTen) {
-        for (int i = 0 ; i < contractList.size() ; i++){
-            if (contractList.get(i).getMaBooking().equals(hoTen)){
+        for (int i = 0; i < contractList.size(); i++) {
+            if (contractList.get(i).getMaBooking().equals(hoTen)) {
                 System.out.println("Mời nhập số hợp đồng");
                 contractList.get(i).setSoHopDong(scanner.nextLine());
                 System.out.println("Mời chọn mã Booking ");

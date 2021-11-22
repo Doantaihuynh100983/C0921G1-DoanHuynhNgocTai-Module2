@@ -16,12 +16,12 @@ import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
     static Map<Facility, Integer> myMap = new LinkedHashMap<>();
-        Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
+    Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
 
     static {
-        myMap.put(new Villa("Massage", 50.2, 60.33, 3, "Villa", "VIP ", 20.3, 5), 1);
-        myMap.put(new Room("CÂU CÁ", 55.3, 70.33, 3, "ROOM", "ĂN UỐNG"), 1);
-        myMap.put(new House("ĐI CHƠI", 50.2, 60.33, 3, "Villa", "VIP", 3), 1);
+        myMap.put(new Villa("SVVL-0009", "Massage", 50.2, 60.33, 3, "Villa", "VIP ", 20.3, 5), 1);
+        myMap.put(new Room("HOVL-0009", "CÂU CÁ", 55.3, 70.33, 3, "ROOM", "ĂN UỐNG"), 1);
+        myMap.put(new House("ROVL-0009", "ĐI CHƠI", 50.2, 60.33, 3, "Villa", "VIP", 3), 1);
 
     }
 
@@ -36,13 +36,13 @@ public class FacilityServiceImpl implements FacilityService {
 
     Scanner scanner = new Scanner(System.in);
     ValidateFacility valiDate = new ValidateFacility();
+
     @Override
     public void addVilla() {
         Villa villa1 = new Villa();
-        System.out.println("Mời nhập tên dịch vụ");
+        villa1.setMaDichVu(valiDate.maVilla());
         villa1.setTenDichVu(valiDate.tenDichVu());
-        System.out.println("Mời nhập diện tích sử dụng");
-        villa1.setDienTichSuDung(Double.parseDouble(scanner.nextLine()));
+        villa1.setDienTichSuDung(valiDate.dienTichHoBoi());
         System.out.println("Mời nhập chi phí thuê");
         villa1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
         System.out.println("Mời nhập số lượng thuê tối đa");
@@ -70,10 +70,9 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void addRoom() {
         Room room1 = new Room();
-        System.out.println("Mời nhập tên dịch vụ");
-        room1.setTenDichVu(scanner.nextLine());
-        System.out.println("Mời nhập diện tích sử dụng");
-        room1.setDienTichSuDung(Double.parseDouble(scanner.nextLine()));
+        room1.setMaDichVu(valiDate.maRoom());
+        room1.setTenDichVu(valiDate.tenDichVu());
+        room1.setDienTichSuDung(valiDate.dienTichHoBoi());
         System.out.println("Mời nhập chi phí thuê");
         room1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
         System.out.println("Mời nhập số lượng người thuê tối đa");
@@ -95,10 +94,9 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void addHouse() {
         House house1 = new House();
-        System.out.println("Mời nhập tên dịch vụ");
-        house1.setTenDichVu(scanner.nextLine());
-        System.out.println("Mời nhập diện tích sử dụng");
-        house1.setDienTichSuDung(Double.parseDouble(scanner.nextLine()));
+        house1.setMaDichVu(valiDate.maHouse());
+        house1.setTenDichVu(valiDate.tenDichVu());
+        house1.setDienTichSuDung(valiDate.dienTichHoBoi());
         System.out.println("Mời nhập chi phí thuê");
         house1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
         System.out.println("Mời nhập số lượng người thuê tối đa");

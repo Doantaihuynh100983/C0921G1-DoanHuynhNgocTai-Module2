@@ -54,6 +54,8 @@ public class CandidateManager {
                             case 3:
                                 System.out.print("============================================\n");
                                 experience.disPlay();
+//                                experience.readFile();
+//                                experience.writeFile();
                                 System.out.print("============================================\n");
                                 break;
                             case 4 :
@@ -88,6 +90,7 @@ public class CandidateManager {
                             case 3:
                                 System.out.print("============================================\n");
                                 fresher.disPlay();
+//                                fresher.writeFile();
                                 System.out.print("============================================\n");
                                 break;
                             case 4 :
@@ -122,6 +125,7 @@ public class CandidateManager {
                             case 3:
                                 System.out.print("============================================\n");
                                 interShip.disPlay();
+//                                interShip.writeFile();
                                 System.out.print("============================================\n");
                                 break;
                         }

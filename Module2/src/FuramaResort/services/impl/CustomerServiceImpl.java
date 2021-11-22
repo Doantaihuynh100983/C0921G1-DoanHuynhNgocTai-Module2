@@ -13,28 +13,24 @@ public class CustomerServiceImpl implements CustomerService {
     static List<Customer> customers = new LinkedList<>();
 
     static {
-        Customer customer1 = new Customer("CTM0001","TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer2 = new Customer("CTM0002","TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-        Customer customer3 = new Customer("CTM0003","TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc");
-
-        customers.add(customer1);
-        customers.add(customer2);
-        customers.add(customer3);
+        customers.add(new Customer("CTM0001", "TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
+        customers.add(new Customer("CTM0002", "TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
+        customers.add(new Customer("CTM0003", "TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
     }
+
     Scanner sc = new Scanner(System.in);
+
     @Override
     public void disPlay() {
-
         for (Customer customer : customers) {
             System.out.println(customer);
         }
     }
 
-    public String maKhachHang(){
-            int chocie = sc.nextInt();
-            return customers.get(chocie - 1 ).getMaSo();
+    public String maKhachHang() {
+        int chocie = sc.nextInt();
+        return customers.get(chocie - 1).getMaSo();
     }
-
 
 
     @Override

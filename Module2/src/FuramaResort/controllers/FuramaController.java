@@ -1,7 +1,6 @@
 package FuramaResort.controllers;
 
 
-
 import FuramaResort.services.impl.*;
 
 import java.util.Scanner;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 public class FuramaController {
 
 
-    public void menu(){
+    public void menu() {
 
 
         int choice = 0;
@@ -92,9 +91,9 @@ public class FuramaController {
                                 System.out.print("============================================\n");
                                 Scanner sc1 = new Scanner(System.in);
                                 System.out.println("Mời nhập vào tên cần chỉnh sữa");
-                                    String index = sc1.nextLine();
-                                 customerServiceImpl.edit(index);
-                                 System.out.print("============================================\n");
+                                String index = sc1.nextLine();
+                                customerServiceImpl.edit(index);
+                                System.out.print("============================================\n");
                                 break;
                             case 4:
 
@@ -235,6 +234,8 @@ public class FuramaController {
                     }
                     break;
                 default:
+                    System.err.println("Không có chức năng này !!!");
+                    break;
 
             }
 

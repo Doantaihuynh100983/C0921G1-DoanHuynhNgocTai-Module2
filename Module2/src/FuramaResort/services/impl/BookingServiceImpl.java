@@ -9,7 +9,7 @@ import java.util.*;
 public class BookingServiceImpl implements BookingService {
     CustomerServiceImpl customerService = new CustomerServiceImpl();
     static Set<Booking> bookings = new TreeSet<>(new BookingComparator());
-        static List<Booking> bookingList = new ArrayList<>();
+    static List<Booking> bookingList = new ArrayList<>();
 
     static {
         bookings.add(new Booking("BK001", "20/10/2019", "30/10/2019", "CTM001", "massage", "villa"));
@@ -58,16 +58,16 @@ public class BookingServiceImpl implements BookingService {
 
     }
 
-    public String maBooking(){
+    public String maBooking() {
         disPlay();
         int chocie = sc.nextInt();
-        return bookingList.get(chocie -1 ).getMaBooking() ;
-    }
-    public String maKhachHang1(){
-        disPlay();
-        int chocie = sc.nextInt();
-        return bookingList.get(chocie -1 ).getMaKhachHang() ;
+        return bookingList.get(chocie - 1).getMaBooking();
     }
 
+    public String maKhachHang1() {
+        disPlay();
+        int chocie = sc.nextInt();
+        return bookingList.get(chocie - 1).getMaKhachHang();
+    }
 
 }

@@ -1,9 +1,9 @@
 package FuramaResort.models;
 
 public class Contract {
-    private String soHopDong ;
+    private String soHopDong;
     private String maBooking;
-    private double  soTienCocTruoc;
+    private double soTienCocTruoc;
     private double tongSoTienThanhToan;
     private String maKhachHang;
 
@@ -62,6 +62,6 @@ public class Contract {
 
     @Override
     public String toString() {
-        return  soHopDong + '\t' + maBooking +  '\t' + soTienCocTruoc +  '\t'+ tongSoTienThanhToan+  '\t' + maKhachHang  ;
+        return soHopDong + '\t' + maBooking + '\t' + soTienCocTruoc + '\t' + tongSoTienThanhToan + '\t' + maKhachHang;
     }
 }

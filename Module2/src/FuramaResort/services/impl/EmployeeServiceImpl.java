@@ -14,20 +14,16 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     static List<Employee> employees = new ArrayList<>();
 
     static {
-        Employee employee1 = new Employee("EPM001","Tài đoàn 1", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-        Employee employee2 = new Employee("EPM002","Tài đoàn 2", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-        Employee employee3 = new Employee("EPM003","Tài đoàn 3", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000);
-        employees.add(employee1);
-        employees.add(employee2);
-        employees.add(employee3);
+        employees.add(new Employee("EPM001", "Tài đoàn 1", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add( new Employee("EPM002", "Tài đoàn 2", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add(new Employee("EPM003", "Tài đoàn 3", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
     }
 
     public EmployeeServiceImpl() {
 
     }
 
-    public EmployeeServiceImpl(String maSo, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai,
-                               String email, String trinhDo, String viTri, double luong) {
+    public EmployeeServiceImpl(String maSo, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai, String email, String trinhDo, String viTri, double luong) {
         super(maSo, hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email, trinhDo, viTri, luong);
     }
 
@@ -46,7 +42,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     public void add() {
         Employee newEmployee = new Employee();
         Scanner sc = new Scanner(System.in);
-      System.out.println("Nhập mã số nhân viên");
+        System.out.println("Nhập mã số nhân viên");
         newEmployee.setMaSo(sc.nextLine());
         System.out.println("Nhập họ và tên");
         newEmployee.setHoTen(sc.nextLine());

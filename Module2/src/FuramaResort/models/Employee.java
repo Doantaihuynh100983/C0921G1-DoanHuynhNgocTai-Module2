@@ -2,9 +2,9 @@ package FuramaResort.models;
 
 import java.time.LocalDateTime;
 
-public class Employee  extends  Person{
+public class Employee extends Person {
     private String trinhDo;
-    private String viTri ;
+    private String viTri;
     private double luong;
 
     public Employee() {
@@ -44,7 +44,7 @@ public class Employee  extends  Person{
 
     @Override
     public String toString() {
-        return getMaSo()+ " \t " +getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() +'\t'+
-                getSoDienThoai()+'\t' + getEmail() + '\t' + getTrinhDo() + '\t' + getViTri() + '\t'+ getLuong() ;
+        return getMaSo() + " \t " + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() + '\t' +
+                getSoDienThoai() + '\t' + getEmail() + '\t' + getTrinhDo() + '\t' + getViTri() + '\t' + getLuong();
     }
 }
