@@ -10,7 +10,6 @@ public class FuramaController {
 
     public void menu() {
 
-
         int choice = 0;
         Scanner sc = new Scanner(System.in);
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();

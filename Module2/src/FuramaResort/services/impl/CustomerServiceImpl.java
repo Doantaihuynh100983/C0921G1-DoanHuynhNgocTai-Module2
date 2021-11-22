@@ -13,9 +13,12 @@ public class CustomerServiceImpl implements CustomerService {
     static List<Customer> customers = new LinkedList<>();
 
     static {
-        customers.add(new Customer("CTM0001", "TÀI ĐOÀN 4", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
-        customers.add(new Customer("CTM0002", "TÀI ĐOÀN 5", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
-        customers.add(new Customer("CTM0003", "TÀI ĐOÀN 6", "10/09/2000", "Nam", 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
+        customers.add(new Customer("CTM0001", "TÀI ĐOÀN 4", "10/09/2000", "Nam",
+                999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
+        customers.add(new Customer("CTM0002", "TÀI ĐOÀN 5", "10/09/2000", "Nam",
+                999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
+        customers.add(new Customer("CTM0003", "TÀI ĐOÀN 6", "10/09/2000", "Nam",
+                999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
     }
 
     Scanner sc = new Scanner(System.in);

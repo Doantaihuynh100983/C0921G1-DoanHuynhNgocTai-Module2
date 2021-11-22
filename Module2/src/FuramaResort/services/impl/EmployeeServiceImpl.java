@@ -14,17 +14,12 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     static List<Employee> employees = new ArrayList<>();
 
     static {
-        employees.add(new Employee("EPM001", "Tài đoàn 1", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-        employees.add( new Employee("EPM002", "Tài đoàn 2", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-        employees.add(new Employee("EPM003", "Tài đoàn 3", "30/10/2000", "nam", 123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-    }
-
-    public EmployeeServiceImpl() {
-
-    }
-
-    public EmployeeServiceImpl(String maSo, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai, String email, String trinhDo, String viTri, double luong) {
-        super(maSo, hoTen, ngaySinh, gioiTinh, soCmnd, soDienThoai, email, trinhDo, viTri, luong);
+        employees.add(new Employee("EPM001", "Tài đoàn 1", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add( new Employee("EPM002", "Tài đoàn 2", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add(new Employee("EPM003", "Tài đoàn 3", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
     }
 
     @Override
