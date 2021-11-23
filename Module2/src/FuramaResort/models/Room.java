@@ -34,7 +34,8 @@ public class Room extends Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return getTenDichVu().equals(room.getTenDichVu())
+        return  getMaDichVu().equals(room.getMaDichVu())
+                && getTenDichVu().equals(room.getTenDichVu())
                 && Double.compare(room.getDienTichSuDung(), getDienTichSuDung()) == 0
                 && Double.compare(room.getChiPhiThue(), getChiPhiThue()) == 0
                 && room.getSoLuongNguoiThueToiDa() == getSoLuongNguoiThueToiDa()
@@ -44,7 +45,7 @@ public class Room extends Facility {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
+        return Objects.hash(getMaDichVu(),getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
                 getKieuThue(), dichVuMienPhiDiKem);
     }
 }

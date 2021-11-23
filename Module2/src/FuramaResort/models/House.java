@@ -44,7 +44,8 @@ public class House extends Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         House house = (House) o;
-        return getTenDichVu().equals(house.getTenDichVu())
+        return  getMaDichVu().equals(house.getMaDichVu())
+                && getTenDichVu().equals(house.getTenDichVu())
                 && Double.compare(house.getDienTichSuDung(), getDienTichSuDung()) == 0
                 && Double.compare(house.getChiPhiThue(), getChiPhiThue()) == 0
                 && house.getSoLuongNguoiThueToiDa() == getSoLuongNguoiThueToiDa()
@@ -55,7 +56,7 @@ public class House extends Facility {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
+        return Objects.hash(getMaDichVu(),getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
                 getKieuThue(), tieuChuanPhong, soTang);
     }
 }

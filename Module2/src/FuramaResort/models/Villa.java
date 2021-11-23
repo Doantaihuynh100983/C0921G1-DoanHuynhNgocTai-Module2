@@ -44,6 +44,7 @@ public class Villa extends Facility {
         this.soTang = soTang;
     }
 
+
     @Override
     public String toString() {
         return "VILLA : "+ getMaDichVu()+"\t" + getTenDichVu() + "\t" + getDienTichSuDung() + "\t" + getChiPhiThue() + "\t" + getSoLuongNguoiThueToiDa() + "\t" +
@@ -55,7 +56,8 @@ public class Villa extends Facility {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Villa villa = (Villa) o;
-        return getTenDichVu().equals(villa.getTenDichVu())
+        return   getMaDichVu().equals(villa.getMaDichVu())
+                && getTenDichVu().equals(villa.getTenDichVu())
                 && Double.compare(villa.getDienTichSuDung(), getDienTichSuDung()) == 0
                 && Double.compare(villa.getChiPhiThue(), getChiPhiThue()) == 0
                 && villa.getSoLuongNguoiThueToiDa() == getSoLuongNguoiThueToiDa()
@@ -67,7 +69,7 @@ public class Villa extends Facility {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
+        return Objects.hash( getMaDichVu(),getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
                 getKieuThue(), tieuChuanPhong, dienTichHoBoi, soTang);
     }
 

@@ -71,24 +71,61 @@ public class ValidateFacility {
     }
 
 
-    public Double dienTichHoBoi() {
-
+    public Double dienTichSuDung() {
         while (true) {
 
             try {
-                System.out.println("Nhập diện tích hồ bơi");
-                double dienTichHoBoi = Double.parseDouble(scanner.nextLine());
-                if (dienTichHoBoi > 30) {
-                    return dienTichHoBoi;
+                System.out.println("Nhập diện tích sử dụng ");
+                double dienTichSuDung = Double.parseDouble(scanner.nextLine());
+                if (dienTichSuDung > 30) {
+                    return dienTichSuDung;
                 }
                 else {
                     throw  new Exception();
                 }
             } catch (Exception e) {
-                System.out.println("Bạn Phải Nhập Diện Tích Hồ Bơi Lớn Hơn 30");
+                System.out.println("Bạn Phải Nhập Diện Tích Sử Dụng Lớn Hơn 30");
             }
         }
 
     }
+
+    public Double chiPhiThue(){
+
+        while (true) {
+
+            try {
+                System.out.println("Nhập Chi Phí Phải Trả Khi Thuê ");
+                double chiPhiThue = Double.parseDouble(scanner.nextLine());
+                if (chiPhiThue > 0) {
+                    return chiPhiThue;
+                }
+                else {
+                    throw  new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Bạn Phải Nhập Chi Phí Thuê Là Số Dương");
+            }
+        }
+
+
+    }
+    public int  soLuongNguoiThue(){
+
+        while (true) {
+
+            try {
+                System.out.println("Nhập diện tích sử dụng ");
+                int soLuongNguoiThue = Integer.parseInt(scanner.nextLine());
+                if (soLuongNguoiThue > 0) {
+                    return soLuongNguoiThue;
+                }
+                else {
+                    throw  new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Bạn Phải Nhập Chi Phí Thuê Là Số Dương");
+            }
+        }
 
 }

@@ -42,9 +42,10 @@ public class FacilityServiceImpl implements FacilityService {
         Villa villa1 = new Villa();
         villa1.setMaDichVu(valiDate.maVilla());
         villa1.setTenDichVu(valiDate.tenDichVu());
-        villa1.setDienTichSuDung(valiDate.dienTichHoBoi());
-        System.out.println("Mời nhập chi phí thuê");
-        villa1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
+        villa1.setDienTichSuDung(valiDate.dienTichSuDung());
+        villa1.setChiPhiThue(valiDate.chiPhiThue());
+
+
         System.out.println("Mời nhập số lượng thuê tối đa");
         villa1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
         System.out.println("Mời nhập kiểu thuê");
@@ -72,9 +73,10 @@ public class FacilityServiceImpl implements FacilityService {
         Room room1 = new Room();
         room1.setMaDichVu(valiDate.maRoom());
         room1.setTenDichVu(valiDate.tenDichVu());
-        room1.setDienTichSuDung(valiDate.dienTichHoBoi());
-        System.out.println("Mời nhập chi phí thuê");
-        room1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
+        room1.setDienTichSuDung(valiDate.dienTichSuDung());
+        room1.setChiPhiThue(valiDate.chiPhiThue());
+
+
         System.out.println("Mời nhập số lượng người thuê tối đa");
         room1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
         System.out.println("Mời nhập kiểu thuê");
@@ -96,9 +98,11 @@ public class FacilityServiceImpl implements FacilityService {
         House house1 = new House();
         house1.setMaDichVu(valiDate.maHouse());
         house1.setTenDichVu(valiDate.tenDichVu());
-        house1.setDienTichSuDung(valiDate.dienTichHoBoi());
-        System.out.println("Mời nhập chi phí thuê");
-        house1.setChiPhiThue(Double.parseDouble(scanner.nextLine()));
+        house1.setDienTichSuDung(valiDate.dienTichSuDung());
+        house1.setChiPhiThue(valiDate.chiPhiThue());
+
+
+
         System.out.println("Mời nhập số lượng người thuê tối đa");
         house1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
         System.out.println("Mời nhập kiểu thuê");
