@@ -1,8 +1,8 @@
 package FuramaResort.models;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
 
-public abstract class Person {
+public abstract class Person  implements Serializable {
     private String maSo;
     private String hoTen;
     private String ngaySinh;

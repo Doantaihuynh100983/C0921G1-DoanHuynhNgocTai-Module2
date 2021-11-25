@@ -1,7 +1,8 @@
 package FuramaResort.models;
 
+import java.io.Serializable;
 
-public class Customer extends Person {
+public class Customer extends Person implements Serializable {
     private String loaiKhach;
     private String diaChi;
 

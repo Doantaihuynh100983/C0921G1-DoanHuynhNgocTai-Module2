@@ -13,12 +13,12 @@ public class FresherImpl  implements candidateService{
 //    public static final String COMMA = ",";
 //    FileUntiels fileUntiels = new FileUntiels();
     static ArrayList<Fresher> freshers = new ArrayList<>();
-    static {
-         freshers.add(new Fresher("Barbosa" , "De Souza" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
-         freshers.add(new Fresher("Cabrera" , "Cornide" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
-         freshers.add(new Fresher("Calderon" , "Cuevas" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
-         freshers.add(new Fresher("Casulari" , "Motta" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
-    }
+//    static {
+//         freshers.add(new Fresher("Barbosa" , "De Souza" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
+//         freshers.add(new Fresher("Cabrera" , "Cornide" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
+//         freshers.add(new Fresher("Calderon" , "Cuevas" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
+//         freshers.add(new Fresher("Casulari" , "Motta" , "20/11/1990" ,"ẤN ĐỘ" , 23654789 , "Souza@gmail.com" , "30/5/2021" , "Good","Duy Tân"));
+//    }
 
 //    public void writeFile(){
 //        String line = null;

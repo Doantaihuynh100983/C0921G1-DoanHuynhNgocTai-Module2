@@ -1,6 +1,5 @@
 package FuramaResort.models;
 
-import FuramaResort.controllers.FuramaController;
 
 import java.util.Objects;
 

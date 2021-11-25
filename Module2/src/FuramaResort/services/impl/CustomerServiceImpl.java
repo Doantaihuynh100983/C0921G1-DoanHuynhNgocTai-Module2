@@ -1,7 +1,10 @@
 package FuramaResort.services.impl;
 
+
 import FuramaResort.models.Customer;
 import FuramaResort.services.CustomerService;
+
+
 
 
 import java.util.LinkedList;
@@ -9,8 +12,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
+//     public static final String FILE_NAME = "Module2/src/FuramaResort/data/customer.csv";
+//        ReadWriteFile readWriteFile = new ReadWriteFile();
+static   List<Customer> customers = new LinkedList<>();
 
-    static List<Customer> customers = new LinkedList<>();
+
 
     static {
         customers.add(new Customer("CTM0001", "TÀI ĐOÀN 4", "10/09/2000", "Nam",
@@ -25,16 +31,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void disPlay() {
-        for (Customer customer : customers) {
+        for (Customer customer :customers){
             System.out.println(customer);
         }
     }
-
-    public String maKhachHang() {
-        int chocie = sc.nextInt();
-        return customers.get(chocie - 1).getMaSo();
-    }
-
 
     @Override
     public void add() {
@@ -77,6 +77,7 @@ public class CustomerServiceImpl implements CustomerService {
                 break;
         }
         customers.add(customer);
+//        readWriteFile.writeToFile(FILE_NAME,customers);
         disPlay();
     }
 
@@ -126,6 +127,12 @@ public class CustomerServiceImpl implements CustomerService {
 
         }
         disPlay();
+    }
+
+
+    public String maKhachHang() {
+        int chocie = sc.nextInt();
+        return customers.get(chocie - 1).getMaSo();
     }
 
 

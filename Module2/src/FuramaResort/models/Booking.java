@@ -1,9 +1,8 @@
 package FuramaResort.models;
-
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Booking {
+
     private String maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;

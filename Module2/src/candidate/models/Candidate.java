@@ -1,6 +1,8 @@
 package candidate.models;
 
-public  abstract class Candidate {
+import java.io.Serializable;
+
+public  abstract class Candidate implements Serializable {
     private String firstName;
     private String lastName;
     private String birthDate;

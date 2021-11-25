@@ -1,6 +1,5 @@
 package FuramaResort.models;
 
-
 public abstract class Facility {
     private String maDichVu;
     private String tenDichVu;

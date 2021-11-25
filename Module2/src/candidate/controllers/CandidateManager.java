@@ -54,8 +54,6 @@ public class CandidateManager {
                             case 3:
                                 System.out.print("============================================\n");
                                 experience.disPlay();
-//                                experience.readFile();
-//                                experience.writeFile();
                                 System.out.print("============================================\n");
                                 break;
                             case 4 :

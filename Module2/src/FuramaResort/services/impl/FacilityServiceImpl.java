@@ -11,7 +11,6 @@ import FuramaResort.validate.ValidateFacility;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
@@ -34,7 +33,6 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
 
-    Scanner scanner = new Scanner(System.in);
     ValidateFacility valiDate = new ValidateFacility();
 
     @Override
@@ -44,19 +42,11 @@ public class FacilityServiceImpl implements FacilityService {
         villa1.setTenDichVu(valiDate.tenDichVu());
         villa1.setDienTichSuDung(valiDate.dienTichSuDung());
         villa1.setChiPhiThue(valiDate.chiPhiThue());
-
-
-        System.out.println("Mời nhập số lượng thuê tối đa");
-        villa1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Mời nhập kiểu thuê");
-        villa1.setKieuThue(scanner.nextLine());
-        System.out.println("Mời nhập tiêu chuẩn phòng");
-        villa1.setTieuChuanPhong(scanner.nextLine());
-        System.out.println("Mời nhập diện tích hồ bơi ");
-        villa1.setDienTichHoBoi(Double.parseDouble(scanner.nextLine()));
-        System.out.println("Mời nhập số tầng");
-        villa1.setSoTang(Integer.parseInt(scanner.nextLine()));
-
+        villa1.setSoLuongNguoiThueToiDa(valiDate.soLuongNguoiThue());
+        villa1.setKieuThue(valiDate.kieuThue());
+        villa1.setTieuChuanPhong(valiDate.tieuChuanPhong());
+        villa1.setDienTichHoBoi(valiDate.dienTichHoBoi());
+        villa1.setSoTang(valiDate.soTang());
 
         if (myMap.containsKey(villa1)) {
             int currentValue = myMap.get(villa1);
@@ -68,6 +58,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     }
 
+
     @Override
     public void addRoom() {
         Room room1 = new Room();
@@ -75,14 +66,9 @@ public class FacilityServiceImpl implements FacilityService {
         room1.setTenDichVu(valiDate.tenDichVu());
         room1.setDienTichSuDung(valiDate.dienTichSuDung());
         room1.setChiPhiThue(valiDate.chiPhiThue());
-
-
-        System.out.println("Mời nhập số lượng người thuê tối đa");
-        room1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Mời nhập kiểu thuê");
-        room1.setKieuThue(scanner.nextLine());
-        System.out.println("Mời nhập dịch vụ miễn phí đi kèm");
-        room1.setDichVuMienPhiDiKem(scanner.nextLine());
+        room1.setSoLuongNguoiThueToiDa(valiDate.soLuongNguoiThue());
+        room1.setKieuThue(valiDate.kieuThue());
+        room1.setDichVuMienPhiDiKem(valiDate.dichVuDiKem());
 
         if (myMap.containsKey(room1)) {
             int currentValue = myMap.get(room1);
@@ -93,6 +79,7 @@ public class FacilityServiceImpl implements FacilityService {
         disPlay();
     }
 
+
     @Override
     public void addHouse() {
         House house1 = new House();
@@ -100,18 +87,10 @@ public class FacilityServiceImpl implements FacilityService {
         house1.setTenDichVu(valiDate.tenDichVu());
         house1.setDienTichSuDung(valiDate.dienTichSuDung());
         house1.setChiPhiThue(valiDate.chiPhiThue());
-
-
-
-        System.out.println("Mời nhập số lượng người thuê tối đa");
-        house1.setSoLuongNguoiThueToiDa(Integer.parseInt(scanner.nextLine()));
-        System.out.println("Mời nhập kiểu thuê");
-        house1.setKieuThue(scanner.nextLine());
-        System.out.println("Mời nhập tiêu chuẩn phòng");
-        house1.setTieuChuanPhong(scanner.nextLine());
-        System.out.println("Mời nhập tiêu chuẩn phòng");
-        house1.setSoTang(Integer.parseInt(scanner.nextLine()));
-
+        house1.setSoLuongNguoiThueToiDa(valiDate.soLuongNguoiThue());
+        house1.setKieuThue(valiDate.kieuThue());
+        house1.setTieuChuanPhong(valiDate.tieuChuanPhong());
+        house1.setSoTang(valiDate.soTang());
 
         if (myMap.containsKey(house1)) {
             int currentValue = myMap.get(house1);

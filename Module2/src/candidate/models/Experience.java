@@ -1,6 +1,8 @@
 package candidate.models;
 
-public class Experience extends Candidate{
+import java.io.Serializable;
+
+public class Experience extends Candidate implements Serializable{
     private String ExpInYear;
     private String ProSkill;
 

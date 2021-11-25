@@ -1,13 +1,8 @@
 package FuramaResort.controllers;
-
-
 import FuramaResort.services.impl.*;
-
 import java.util.Scanner;
 
 public class FuramaController {
-
-
     public void menu() {
 
         int choice = 0;
@@ -214,7 +209,7 @@ public class FuramaController {
                         switch (choice) {
                             case 1:
                                 System.out.print("============================================\n");
-                                System.out.println(" Display list customers use service ");
+                                promotionService.danhSachKhachHang();
                                 System.out.print("============================================\n");
                                 break;
                             case 2:

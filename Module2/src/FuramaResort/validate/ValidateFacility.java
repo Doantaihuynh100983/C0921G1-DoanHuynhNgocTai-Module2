@@ -110,22 +110,101 @@ public class ValidateFacility {
 
 
     }
-    public int  soLuongNguoiThue(){
+    public int  soLuongNguoiThue() {
 
         while (true) {
 
             try {
-                System.out.println("Nhập diện tích sử dụng ");
+                System.out.println("Nhập số lượng người thuê  ");
                 int soLuongNguoiThue = Integer.parseInt(scanner.nextLine());
-                if (soLuongNguoiThue > 0) {
+                if ( 0 < soLuongNguoiThue && soLuongNguoiThue<20) {
                     return soLuongNguoiThue;
+                } else {
+                    throw new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Bạn Phải Nhập số lượng người thuê lớn 0 và nhỏ hơn 20 ");
+            }
+        }
+    }
+
+    public String kieuThue() {
+        String kieuThue;
+        while (true) {
+            System.out.println("Nhập kiểu thuê");
+            kieuThue = scanner.nextLine();
+            Pattern p = Pattern.compile("(?=.*?[A-Z])(?=.*?[a-z])");
+            if (p.matcher(kieuThue).find()) {
+                break;
+            } else {
+                System.err.println("Bạn Phải Nhập Chữ Đầu Viết Hoa");
+            }
+        }
+        return kieuThue;
+    }
+    public String tieuChuanPhong() {
+        String tieuChuanPhong;
+        while (true) {
+            System.out.println("Nhập tiêu chuẩn thuê");
+            tieuChuanPhong = scanner.nextLine();
+            Pattern p = Pattern.compile("(?=.*?[A-Z])(?=.*?[a-z])");
+            if (p.matcher(tieuChuanPhong).find()) {
+                break;
+            } else {
+                System.err.println("Bạn Phải Nhập Chữ Đầu Viết Hoa");
+            }
+        }
+        return tieuChuanPhong;
+    }
+
+    public Double dienTichHoBoi() {
+
+        while (true) {
+            try {
+                System.out.println("Nhập diện tích hồ bơi ");
+                double dienTichHoBoi = Double.parseDouble(scanner.nextLine());
+                if (dienTichHoBoi > 30) {
+                    return dienTichHoBoi;
                 }
                 else {
                     throw  new Exception();
                 }
             } catch (Exception e) {
-                System.out.println("Bạn Phải Nhập Chi Phí Thuê Là Số Dương");
+                System.out.println("Bạn Phải Nhập Diện Tích Hồ Bơi Lớn Hơn 30");
             }
         }
+    }
+
+    public int soTang() {
+
+        while (true) {
+            try {
+                System.out.println("Nhập diện tích hồ bơi ");
+                int soTang = Integer.parseInt(scanner.nextLine());
+                if (soTang > 0 && soTang < 20) {
+                    return soTang;
+                }
+                else {
+                    throw  new Exception();
+                }
+            } catch (Exception e) {
+                System.out.println("Bạn Phải Nhập số tầng lớn hơn 0 và nhỏ hơn 20 !!");
+            }
+        }
+    }
+    public String dichVuDiKem() {
+        String dichVuDiKem;
+        while (true) {
+            System.out.println("Nhập dịch vụ miễn phí đi kèm");
+            dichVuDiKem = scanner.nextLine();
+            Pattern p = Pattern.compile("^[a-z]$");
+            if (p.matcher(dichVuDiKem).find()) {
+                break;
+            } else {
+                System.err.println("Bạn Phải Nhập Chuỗi ");
+            }
+        }
+        return dichVuDiKem;
+    }
 
 }

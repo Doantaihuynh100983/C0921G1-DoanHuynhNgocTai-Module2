@@ -1,5 +1,4 @@
 package candidate.common;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +6,7 @@ import java.util.List;
 public class FileUntiels {
     public void writeFile(String pathFile, String line){
         try {
-            FileWriter fileWriter = new FileWriter(pathFile , true);
+            FileWriter fileWriter = new FileWriter(pathFile,true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(line);
             bufferedWriter.newLine();
