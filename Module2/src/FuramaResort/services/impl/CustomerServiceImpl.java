@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
-//     public static final String FILE_NAME = "Module2/src/FuramaResort/data/customer.csv";
-//        ReadWriteFile readWriteFile = new ReadWriteFile();
 static   List<Customer> customers = new LinkedList<>();
 
 

@@ -4,6 +4,8 @@ package FuramaResort.services.impl;
 import FuramaResort.models.Booking;
 import FuramaResort.services.BookingService;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
@@ -11,11 +13,12 @@ public class BookingServiceImpl implements BookingService {
     static Set<Booking> bookings = new TreeSet<>(new BookingComparator());
 
     static {
-        bookings.add(new Booking("BK001", "3/10/2019", "30/10/2019", "CTM001", "massage", "villa"));
-        bookings.add(new Booking("BK002", "11/10/2019", "30/10/2019", "CTM002", "câu cá", "house"));
-        bookings.add(new Booking("BK003", "5/10/2019", "31/12/2019", "CTM003", "đi chơi", "room"));
-        bookings.add(new Booking("BK004", "9/10/2019", "9/10/2019", "CTM004", "massage", "villa"));
-        bookings.add(new Booking("BK005", "6/10/2019", "9/10/2018", "CTM004", "massage", "villa"));
+        bookings.add(new Booking("BK001", "3/10/2015", "30/10/2019", "CTM001", "villa", "massage"));
+        bookings.add(new Booking("BK009", "3/10/2015", "28/10/2019", "CTM0111", "villa3", "lượm luôn"));
+        bookings.add(new Booking("BK002", "11/11/2021", "30/10/2019", "CTM002", "chouse", "câu cá"));
+        bookings.add(new Booking("BK003", "5/11/2021", "31/12/2019", "CTM003", "room", "đi chơi "));
+        bookings.add(new Booking("BK004", "9/10/2020", "9/10/2019", "CTM004", "villa", "đi dạo"));
+        bookings.add(new Booking("BK005", "6/10/2019", "9/10/2018", "CTM004", "villa", "massage"));
 
 
     }
@@ -63,4 +66,18 @@ public class BookingServiceImpl implements BookingService {
     }
 
 
+
+    public void ngayThang(){
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        String month = String.valueOf(localDate.getMonthValue());
+
+        for (Booking booking : bookings){
+            String[] ngay =  booking.getNgayBatDau().split("/");
+            if (ngay[1].equals(month)){
+                System.out.println(booking);
+            }
+        }
+
+    }
 }

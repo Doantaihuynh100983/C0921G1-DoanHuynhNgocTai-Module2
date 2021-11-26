@@ -179,7 +179,7 @@ public class ValidateFacility {
 
         while (true) {
             try {
-                System.out.println("Nhập diện tích hồ bơi ");
+                System.out.println("Nhập số tầng s ");
                 int soTang = Integer.parseInt(scanner.nextLine());
                 if (soTang > 0 && soTang < 20) {
                     return soTang;

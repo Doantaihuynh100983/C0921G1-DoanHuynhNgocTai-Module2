@@ -144,7 +144,8 @@ public class FuramaController {
                             case 3:
                                 System.out.print("============================================\n");
                                 System.out.println(" Display list facility maintenance");
-                                facilityService.disPlay();
+//                                facilityService.disPlay();
+
                                 System.out.print("============================================\n");
                                 break;
                             case 4:
@@ -209,12 +210,16 @@ public class FuramaController {
                         switch (choice) {
                             case 1:
                                 System.out.print("============================================\n");
-                                promotionService.danhSachKhachHang();
+                                Scanner scanner = new Scanner(System.in);
+                                bookingService.disPlay();
+                                System.out.println("Mời nhập năm cần tìm kiếm");
+                                String nam =scanner.nextLine();
+                                promotionService.danhSachKhachHang(nam);
                                 System.out.print("============================================\n");
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                System.out.println(" Display list customers get voucher ");
+                                bookingService.ngayThang();
                                 System.out.print("============================================\n");
                                 break;
                             case 3:

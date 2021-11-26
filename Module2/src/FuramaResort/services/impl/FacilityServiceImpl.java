@@ -9,18 +9,16 @@ import FuramaResort.services.FacilityService;
 import FuramaResort.validate.ValidateFacility;
 
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
     static Map<Facility, Integer> myMap = new LinkedHashMap<>();
     Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
 
     static {
-        myMap.put(new Villa("SVVL-0009", "Massage", 50.2, 60.33, 3, "Villa", "VIP ", 20.3, 5), 1);
-        myMap.put(new Room("HOVL-0009", "CÂU CÁ", 55.3, 70.33, 3, "ROOM", "ĂN UỐNG"), 1);
-        myMap.put(new House("ROVL-0009", "ĐI CHƠI", 50.2, 60.33, 3, "Villa", "VIP", 3), 1);
+        myMap.put(new Villa("SVVL-0009", "Villa", 50.2, 60.33, 3, "Tháng", "VIP ", 20.3, 5), 1);
+        myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
+        myMap.put(new House("ROVL-0009", "House", 50.2, 60.33, 3, "Ngày", "VIP", 3), 1);
 
     }
 
@@ -33,8 +31,14 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
 
-    ValidateFacility valiDate = new ValidateFacility();
 
+
+
+
+
+
+
+    ValidateFacility valiDate = new ValidateFacility();
     @Override
     public void addVilla() {
         Villa villa1 = new Villa();
@@ -101,4 +105,6 @@ public class FacilityServiceImpl implements FacilityService {
         disPlay();
 
     }
+
+
 }

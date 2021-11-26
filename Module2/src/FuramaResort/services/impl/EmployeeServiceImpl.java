@@ -5,6 +5,8 @@ import FuramaResort.common.ReadWriteFile;
 import FuramaResort.models.Customer;
 import FuramaResort.models.Employee;
 import FuramaResort.services.EmployeeService;
+import test_doc_ghi_file.FileUntiels;
+import test_doc_ghi_file.Student;
 
 import java.util.ArrayList;
 
@@ -12,30 +14,28 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl extends Employee implements EmployeeService {
-    public static final String FILE_NAME = "Module2/src/FuramaResort/data/employee.dat";
-    ReadWriteFile readWriteFile = new ReadWriteFile();
-    List<Employee> employees = readWriteFile.readDataFromFile(FILE_NAME);
-//
-//    static List<Employee> employees = new ArrayList<>();
+//   static ReadWriteFile readWriteFile = new ReadWriteFile();
+//   public static final String FILE_NAME = "Module2/src/FuramaResort/data/employee.csv";
+//    public static   final String ComMa = ",";
+    static List<Employee> employees = new ArrayList<>();
 
-//    static {
-//        employees.add(new Employee("EPM001", "Tài đoàn 1", "30/10/2000", "nam",
-//                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-//        employees.add( new Employee("EPM002", "Tài đoàn 2", "30/10/2000", "nam",
-//                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-//        employees.add(new Employee("EPM003", "Tài đoàn 3", "30/10/2000", "nam",
-//                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
-//    }
-
-    @Override
-    public void disPlay() {
-        List<Employee> employees = readWriteFile.readDataFromFile(FILE_NAME);
-        for (Employee employee : employees){
-            System.out.println(employee);
-        }
+    static {
+        employees.add(new Employee("EPM001", "Tài đoàn 1", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add( new Employee("EPM002", "Tài đoàn 2", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
+        employees.add(new Employee("EPM003", "Tài đoàn 3", "30/10/2000", "nam",
+                123456789, 985666666, "taidoan@gmail.com", "cao dang", "giam doc", 200.0000));
 
     }
 
+    @Override
+    public void disPlay() {
+       for (Employee employee : employees){
+           System.out.println(employee);
+       }
+
+    }
     @Override
     public void add() {
         Employee newEmployee = new Employee();
@@ -99,7 +99,6 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
         }
 
         employees.add(newEmployee);
-        readWriteFile.writeToFile(FILE_NAME,employees);
         disPlay();
 
 
@@ -170,9 +169,5 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
                 break;
             }
         }
-        readWriteFile.writeToFile(FILE_NAME,employees);
-        disPlay();
-
-
     }
 }

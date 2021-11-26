@@ -1,35 +1,41 @@
 package FuramaResort.common;
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadWriteFile<T> {
-
-
-    public void writeToFile(String path, List<T> furuma) {
+public class ReadWriteFile {
+    public void writeFile(String pathFile, String line){
         try {
-            FileOutputStream fos = new FileOutputStream(path);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(furuma);
-            oos.close();
-            fos.close();
+            FileWriter fileWriter = new FileWriter(pathFile,true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
+
+            bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public List<T> readDataFromFile(String path){
-        List<T> furuma = new ArrayList<>();
-        try{
-            FileInputStream fis = new FileInputStream(path);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            furuma = (List<T>) ois.readObject();
-            fis.close();
-            ois.close();
-        }catch(Exception ex){
-            ex.printStackTrace();
+
+    public List<String> readFile(String pathFlie){
+        List<String> listLine = new ArrayList<>();
+        try {
+            FileReader fileReader = new FileReader(pathFlie);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null ;
+            while ((line = bufferedReader.readLine()) !=null){
+                listLine.add(line);
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return furuma;
+        return listLine;
     }
 }
