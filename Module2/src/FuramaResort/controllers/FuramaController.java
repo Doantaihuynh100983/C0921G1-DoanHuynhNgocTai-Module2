@@ -219,7 +219,7 @@ public class FuramaController {
                                 break;
                             case 2:
                                 System.out.print("============================================\n");
-                                bookingService.ngayThang();
+//                                bookingService.ngayThang();
                                 System.out.print("============================================\n");
                                 break;
                             case 3:
