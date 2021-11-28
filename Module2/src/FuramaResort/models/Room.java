@@ -29,6 +29,8 @@ public class Room extends Facility {
                 getSoLuongNguoiThueToiDa() + "\t" + getKieuThue() + "\t" + dichVuMienPhiDiKem;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,4 +50,7 @@ public class Room extends Facility {
         return Objects.hash(getMaDichVu(),getTenDichVu(), getDienTichSuDung(), getChiPhiThue(), getSoLuongNguoiThueToiDa(),
                 getKieuThue(), dichVuMienPhiDiKem);
     }
+
+
+
 }

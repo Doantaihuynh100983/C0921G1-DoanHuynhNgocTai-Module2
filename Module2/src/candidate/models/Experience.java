@@ -1,6 +1,7 @@
 package candidate.models;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Experience extends Candidate implements Serializable{
     private String ExpInYear;
@@ -37,4 +38,5 @@ public class Experience extends Candidate implements Serializable{
         return  getFirstName()+'\t' + getLastName()+'\t' + getBirthDate()+'\t' + getAddress()
                 +'\t'+ getPhone()+'\t' + getEmail()+'\t' +ExpInYear +'\t' + ProSkill  ;
     }
+
 }

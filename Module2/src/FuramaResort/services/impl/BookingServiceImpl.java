@@ -14,12 +14,11 @@ public class BookingServiceImpl implements BookingService {
 
     static {
         bookings.add(new Booking("BK001", "3/10/2015", "30/10/2019", "CTM001", "villa", "massage"));
-        bookings.add(new Booking("BK009", "3/10/2015", "28/10/2019", "CTM0111", "villa3", "lượm luôn"));
+        bookings.add(new Booking("BK009", "3/10/2030", "28/10/2019", "CTM0111", "villa3", "lượm luôn"));
         bookings.add(new Booking("BK002", "11/11/2021", "30/10/2019", "CTM002", "chouse", "câu cá"));
-        bookings.add(new Booking("BK003", "5/11/2021", "31/12/2019", "CTM003", "room", "đi chơi "));
+        bookings.add(new Booking("BK003", "5/11/2015", "31/12/2019", "CTM003", "room", "đi chơi "));
         bookings.add(new Booking("BK004", "9/10/2020", "9/10/2019", "CTM004", "villa", "đi dạo"));
         bookings.add(new Booking("BK005", "6/10/2019", "9/10/2018", "CTM004", "villa", "massage"));
-
 
     }
 

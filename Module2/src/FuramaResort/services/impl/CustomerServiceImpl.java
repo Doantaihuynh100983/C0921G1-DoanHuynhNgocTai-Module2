@@ -13,9 +13,6 @@ import java.util.Scanner;
 
 public class CustomerServiceImpl implements CustomerService {
 static   List<Customer> customers = new LinkedList<>();
-
-
-
     static {
         customers.add(new Customer("CTM0001", "TÀI ĐOÀN 4", "10/09/2000", "Nam",
                 999999999, 777777777, "DoanTai@gmail.com", "Platinium", "nam phuoc"));
@@ -54,28 +51,8 @@ static   List<Customer> customers = new LinkedList<>();
         customer.setEmail(sc.nextLine());
         System.out.println("Mời nhập địa chỉ");
         customer.setDiaChi(sc.nextLine());
-        System.out.println("Mời chọn loại khách");
-        System.out.println("1.Diamond, 2.Platinium, 3.Gold, 4.Silver, 5.Member ");
-        int choice1 = sc.nextInt();
-        switch (choice1) {
-            case 1:
-                customer.setLoaiKhach("Diamond");
-                break;
-            case 2:
-                customer.setLoaiKhach("Platinium");
-                break;
-            case 3:
-                customer.setLoaiKhach("Gold");
-                break;
-            case 4:
-                customer.setLoaiKhach("Silver");
-                break;
-            case 5:
-                customer.setLoaiKhach("Member");
-                break;
-        }
+        customer.setLoaiKhach(loaiKhach1());
         customers.add(customer);
-//        readWriteFile.writeToFile(FILE_NAME,customers);
         disPlay();
     }
 
@@ -99,33 +76,40 @@ static   List<Customer> customers = new LinkedList<>();
                 customers.get(i).setEmail(sc.nextLine());
                 System.out.println("Nhập địa chỉ ");
                 customers.get(i).setDiaChi(sc.nextLine());
-                System.out.println("Mời chọn loại khách hàng");
-                System.out.println("1.Diamond, 2.Platinium, 3.Gold, 4.Silver, 5.Member");
-                int choice1 = sc.nextInt();
-                switch (choice1) {
-                    case 1:
-                        customers.get(i).setLoaiKhach("Diamond");
-                        break;
-                    case 2:
-                        customers.get(i).setLoaiKhach("Platinium");
-                        break;
-                    case 3:
-                        customers.get(i).setLoaiKhach("Gold");
-                        break;
-                    case 4:
-                        customers.get(i).setLoaiKhach("Silver");
-                        break;
-                    case 5:
-                        customers.get(i).setLoaiKhach("Member");
-                        break;
-                }
-                break;
+                customers.get(i).setLoaiKhach(loaiKhach1());
 
             }
 
         }
         disPlay();
     }
+
+
+    public String loaiKhach1(){
+        String reSult = "" ;
+        System.out.println("Mời chọn loại khách hàng");
+        System.out.println("1.Diamond, 2.Platinium, 3.Gold, 4.Silver, 5.Member");
+        int choice1 = sc.nextInt();
+        switch (choice1) {
+            case 1:
+                reSult = "Diamond";
+                break;
+            case 2:
+                reSult ="Platinium";
+                break;
+            case 3:
+                reSult = "Gold";
+                break;
+            case 4:
+                reSult ="Silver";
+                break;
+            case 5:
+                reSult ="Member";
+                break;
+        }
+        return reSult;
+    }
+
 
 
     public String maKhachHang() {
