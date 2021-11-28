@@ -44,7 +44,7 @@ public class Employee extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return getMaSo() + " \t " + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() + '\t' +
-                getSoDienThoai() + '\t' + getEmail() + '\t' + getTrinhDo() + '\t' + getViTri() + '\t' + getLuong();
+        return getMaSo()+","+getHoTen()+","+getNgaySinh()+","+getGioiTinh()+","+getSoCmnd()+ ","+
+                getSoDienThoai()+","+getEmail()+","+getTrinhDo()+","+getViTri()+","+getLuong();
     }
 }

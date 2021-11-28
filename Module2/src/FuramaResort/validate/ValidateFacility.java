@@ -179,16 +179,17 @@ public class ValidateFacility {
 
         while (true) {
             try {
-                System.out.println("Nhập số tầng s ");
+                System.out.println("Nhập số tầng ");
                 int soTang = Integer.parseInt(scanner.nextLine());
                 if (soTang > 0 && soTang < 20) {
                     return soTang;
                 }
                 else {
-                    throw  new Exception();
+                    System.out.println("Bạn Phải Nhập số tầng lớn hơn 0 và nhỏ hơn 20 !!");
                 }
+
             } catch (Exception e) {
-                System.out.println("Bạn Phải Nhập số tầng lớn hơn 0 và nhỏ hơn 20 !!");
+                e.printStackTrace();
             }
         }
     }

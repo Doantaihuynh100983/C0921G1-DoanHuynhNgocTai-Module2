@@ -13,16 +13,8 @@ public class ContactServiceImpl implements ContactService {
     BookingServiceImpl bookingService = new BookingServiceImpl();
 
     Scanner scanner = new Scanner(System.in);
-    static Queue<Contract> contracts = new LinkedList<>();
-    static  Queue<Booking> bookings = new LinkedList<>();
-
-    static {
-        contracts.add(new Contract("0001", "BK001", 5.3, 5.0, "CTM0001"));
-        contracts.add(new Contract("0002", "BK002", 5.3, 5.0, "CTM0002"));
-        contracts.add(new Contract("0003", "BK003", 5.3, 5.0, "CTM0003"));
-
-
-    }
+     Queue<Contract> contracts = new LinkedList<>();
+     Queue<Booking> bookings = new LinkedList<>();
 
     @Override
     public void disPlay() {
@@ -47,14 +39,31 @@ public class ContactServiceImpl implements ContactService {
         int soTienThanhToan = Integer.parseInt(scanner.nextLine());
 
         contracts.add(new Contract(maHopDong ,maBooking , tienCoc ,  soTienThanhToan , maKhachHang));
+        for (Contract contract : contracts){
+            System.out.println(contract);
+        }
 
     }
 
     @Override
     public void edit(String hoTen) {
+        for (Contract contract : contracts){
+            if (contract.getMaBooking().equals(hoTen)){
+                System.out.println("Nhập số mã hợp  đồng");
+                contract.setSoHopDong(scanner.nextLine());
+                System.out.println("Nhập số tiền cọc trước");
+                contract.setSoTienCocTruoc(Integer.parseInt(scanner.nextLine()));
+                System.out.println("Nhập số tiền thanh toáng");
+                contract.setTongSoTienThanhToan(Integer.parseInt(scanner.nextLine()));
 
+
+
+                System.out.println(contract);
+
+            }
+        }
+        }
       }
-    }
 
 
 
