@@ -35,7 +35,7 @@ public class Customer extends Person implements Serializable {
 
     @Override
     public String toString() {
-        return getMaSo() + "\t" + getHoTen() + '\t' + getNgaySinh() + '\t' + getGioiTinh() + '\t' + getSoCmnd() + '\t' + getSoDienThoai()
-                + getEmail() + '\t' + getLoaiKhach() + '\t' + getDiaChi();
+        return getMaSo()+","+getHoTen()+","+getNgaySinh()+","+getGioiTinh()+","+getSoCmnd()+","+getSoDienThoai()
+                +","+getEmail()+","+getLoaiKhach()+","+getDiaChi();
     }
 }

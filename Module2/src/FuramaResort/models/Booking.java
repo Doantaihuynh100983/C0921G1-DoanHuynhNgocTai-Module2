@@ -75,7 +75,7 @@ public class Booking {
 
     @Override
     public String toString() {
-        return maBooking + '\t' + ngayBatDau + '\t' + ngayKetThuc + '\t' + maKhachHang + '\t' + tenDichVu + '\t' + loaiDichVu + '\t';
+        return maBooking+","+ngayBatDau+","+ngayKetThuc+","+maKhachHang+","+tenDichVu+","+loaiDichVu;
     }
 
     @Override
