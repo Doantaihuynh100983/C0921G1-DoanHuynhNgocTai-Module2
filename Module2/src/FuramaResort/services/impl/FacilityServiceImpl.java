@@ -19,7 +19,7 @@ public class FacilityServiceImpl implements FacilityService {
         myMap.put(new Villa("SVVL-0009", "Villa", 50.2, 60.33, 3, "Tháng", "VIP ", 20.3, 5), 1);
         myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
         myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
-        myMap.put(new House("ROVL-0009", "House", 50.2, 60.33, 3, "Ngày", "VIP", 3), 1);
+        myMap.put(new House("ROVL-0009", "House", 50.2, 60.33, 3, "Ngày", "VIP", 3), 5);
 
     }
 
@@ -30,6 +30,17 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.println(entry.getKey() + " - " + " Số Lần Booking Đã Được Sử Dụng " + entry.getValue());
         }
     }
+
+
+
+    public void disPlayFacilityMainTenance(){
+        for (Map.Entry<Facility, Integer> entry : entrySet){
+            if (entry.getValue() == 5){
+                System.out.println(entry);
+            }
+        }
+    }
+
 
     ValidateFacility valiDate = new ValidateFacility();
     @Override

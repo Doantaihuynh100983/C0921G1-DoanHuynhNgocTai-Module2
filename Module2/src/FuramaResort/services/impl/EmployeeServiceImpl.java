@@ -28,6 +28,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
     }
     @Override
     public void add() {
+        List<String> stringList = new ArrayList<>();
         Employee newEmployee = new Employee();
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập mã số nhân viên");
@@ -50,7 +51,7 @@ public class EmployeeServiceImpl extends Employee implements EmployeeService {
         newEmployee.setViTri(setVitri1());
 
         employees.add(newEmployee);
-        List<String> stringList = new ArrayList<>();
+
         stringList.add(newEmployee.toString());
         WriteReadFile.writeFile(FILE_NAME, stringList, true);
         disPlay();

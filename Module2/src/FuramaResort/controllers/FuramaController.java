@@ -1,4 +1,6 @@
 package FuramaResort.controllers;
+import FuramaResort.services.CustomerService;
+import FuramaResort.services.EmployeeService;
 import FuramaResort.services.impl.*;
 import java.util.Scanner;
 
@@ -7,8 +9,12 @@ public class FuramaController {
 
         int choice = 0;
         Scanner sc = new Scanner(System.in);
-        EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl();
-        CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl();
+        EmployeeService employeeServiceImpl = new EmployeeServiceImpl();
+        CustomerService customerServiceImpl = new CustomerServiceImpl();
+
+
+
+
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpl bookingService = new BookingServiceImpl();
         ContactServiceImpl contactService = new ContactServiceImpl();
@@ -144,7 +150,7 @@ public class FuramaController {
                             case 3:
                                 System.out.print("============================================\n");
                                 System.out.println(" Display list facility maintenance");
-//                                facilityService.disPlay();
+                                 facilityService.disPlayFacilityMainTenance();
 
                                 System.out.print("============================================\n");
                                 break;
