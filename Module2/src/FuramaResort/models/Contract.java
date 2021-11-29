@@ -62,6 +62,6 @@ public class Contract {
 
     @Override
     public String toString() {
-        return soHopDong + '\t' + maBooking + '\t' + soTienCocTruoc + '\t' + tongSoTienThanhToan + '\t' + maKhachHang;
+        return soHopDong+","+maBooking+","+soTienCocTruoc+","+tongSoTienThanhToan+","+maKhachHang;
     }
 }
