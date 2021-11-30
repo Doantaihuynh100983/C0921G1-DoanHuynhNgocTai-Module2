@@ -31,7 +31,7 @@ public class ContactServiceImpl implements ContactService {
         Booking booking = bookings.poll();
         Contract contract1 = new Contract();
         System.out.println(booking);
-       contract1.setMaBooking(booking.getMaBooking());
+        contract1.setMaBooking(booking.getMaBooking());
         contract1.setMaKhachHang(booking.getMaKhachHang());
         System.out.println("Nhập mã hợp đồng");
         contract1.setSoHopDong(scanner.nextLine());
@@ -64,7 +64,6 @@ public class ContactServiceImpl implements ContactService {
     }
 
     public Queue<Contract> covertStringToEmployee() {
-//        Queue<Contract> contracts = new LinkedList<>();
         List<String> stringList = WriteReadFile.readFile(FILE_NAME);
         Queue<Contract> contracts1 = new LinkedList<>();
         String[] arrContract;
@@ -75,8 +74,7 @@ public class ContactServiceImpl implements ContactService {
         }
         return contracts1;
     }
-//    String soHopDong, String maBooking,
-//    double soTienCocTruoc, double tongSoTienThanhToan, String maKhachHang
+
 
 
     public List<String> covertEmployeeToString() {
