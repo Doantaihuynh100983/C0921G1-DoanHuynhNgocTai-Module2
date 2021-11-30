@@ -143,13 +143,12 @@ public class FuramaController {
                                         case 2:
                                             int choice5 = 0;
                                             while (choice5 != 4) {
-                                                try {
-
+//                                                try {
                                                     System.out.println("1. Add New Villa");
                                                     System.out.println("2. Add New Room");
                                                     System.out.println("3. Add New House");
                                                     System.out.println("4. Return main menu");
-                                                    choice5 = Integer.parseInt(sc.nextLine());
+                                                    choice5 = sc.nextInt();
 
                                                     switch (choice5) {
                                                         case 1:
@@ -174,9 +173,9 @@ public class FuramaController {
                                                             break;
 
                                                     }
-                                                } catch (NumberFormatException n) {
-                                                    System.err.println("Bạn Không Được Nhập Chữ");
-                                                }
+//                                                } catch (NumberFormatException n) {
+//                                                    System.err.println("Bạn Không Được Nhập Chữ");
+//                                                }
                                             }
 
                                             break;

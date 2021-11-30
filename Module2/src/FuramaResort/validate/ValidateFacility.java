@@ -42,7 +42,7 @@ public class ValidateFacility {
     public String maRoom() {
         String maRoom;
         while (true) {
-            System.out.println("Nhập mã dịch vụ Villa");
+            System.out.println("Nhập mã dịch vụ room");
             maRoom = scanner.nextLine();
             Pattern p = Pattern.compile("^SVRO-\\d{4}$");
             if (p.matcher(maRoom).find()) {
@@ -58,7 +58,7 @@ public class ValidateFacility {
     public String maHouse() {
         String maHouse;
         while (true) {
-            System.out.println("Nhập mã dịch vụ Villa");
+            System.out.println("Nhập mã dịch vụ house");
             maHouse = scanner.nextLine();
             Pattern p = Pattern.compile("^SVHO-\\d{4}$");
             if (p.matcher(maHouse).find()) {

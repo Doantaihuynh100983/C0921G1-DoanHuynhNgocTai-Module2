@@ -68,9 +68,9 @@ public class TaiKhoanTietKiemImpl implements TaiKhoanTietKiemSevice {
     }
 
     @Override
-    public boolean checkDelete(int maNganHang) {
+    public boolean checkDelete(String maNganHang) {
         for (TaiKhoanTietKiem tietkiem : taiKhoanTietKiems) {
-            if (maNganHang == tietkiem.getMaTaiKhoan()) {
+            if (maNganHang.equals(tietkiem.getMaTaiKhoan())) {
                 return true;
             }
         }

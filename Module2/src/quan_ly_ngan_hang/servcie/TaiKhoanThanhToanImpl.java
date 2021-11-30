@@ -1,14 +1,11 @@
 package quan_ly_ngan_hang.servcie;
 
 
-import quan_ly_ngan_hang.models.TaiKhoanTietKiem;
-import quan_ly_ngan_hang.validate.NotFoundBankAccountException;
 import quan_ly_ngan_hang.validate.Validate;
 import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanThanhToanSevice;
 
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     Validate valiDate = new Validate();
@@ -74,9 +71,9 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
 
 
     @Override
-    public boolean checkDelete(int maNganHang) {
+    public boolean checkDelete(String maNganHang) {
         for (TaiKhoanThanhToan thanhToan : taiKhoanThanhToans) {
-            if (maNganHang == thanhToan.getMaTaiKhoan()) {
+            if (maNganHang.equals(thanhToan.getMaTaiKhoan())) {
                 return true;
             }
         }
@@ -92,6 +89,7 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
         }
         return false;
     }
+
 
 
 }

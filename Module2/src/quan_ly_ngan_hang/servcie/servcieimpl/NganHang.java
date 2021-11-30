@@ -11,7 +11,7 @@ public interface NganHang {
 
     void search(String tenChuTaiKhoan);
 
-    boolean checkDelete(int maNganHang);
+    boolean checkDelete(String maNganHang);
 
     boolean checkSearch(String tenChuTaiKhoan);
 }

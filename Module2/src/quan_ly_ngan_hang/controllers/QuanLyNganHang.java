@@ -51,22 +51,22 @@ public class QuanLyNganHang {
                     }
                     break;
                 case 2:
-                    Scanner scanner = new Scanner(System.in);
-                    System.out.println("nhập mã ngân hàng cần xóa bỏ");
-                    int maNganHang = scanner.nextInt();
-                    System.out.println("1 Yes \n 2 No");
-                    int chon = scanner.nextInt();
-                    if (taiKhoanThanhToan.checkDelete(maNganHang) || taiKhoanTietKiem.checkDelete(maNganHang)) {
-                        if (chon == 1) {
-                            taiKhoanThanhToan.delete(maNganHang);
-                            taiKhoanTietKiem.delete(maNganHang);
-                            System.out.println("Đã Xóa Thành Công");
-                            break;
-                        } else if (chon == 2) {
-                            break;
-                        }
-
-                    }
+//                    Scanner scanner = new Scanner(System.in);
+//                    System.out.println("nhập mã ngân hàng cần xóa bỏ");
+//                    String maNganHang = scanner.nextLine();
+//                    System.out.println("1 Yes \n 2 No");
+//                    int chon = scanner.nextInt();
+//                    if (taiKhoanThanhToan.checkDelete(maNganHang) || taiKhoanTietKiem.checkDelete(maNganHang)) {
+//                        if (chon == 1) {
+//                            taiKhoanThanhToan.delete(maNganHang);
+//                            taiKhoanTietKiem.delete(maNganHang);
+//                            System.out.println("Đã Xóa Thành Công");
+//                            break;
+//                        } else if (chon == 2) {
+//                            break;
+//                        }
+//
+//                    }
 
 
                     break;
@@ -93,18 +93,18 @@ public class QuanLyNganHang {
                         case 1:
                             System.out.println("Nhập tên cần tìm kiếm");
                             String tenChuTaiKhoan = scanner1.nextLine();
-                            if (taiKhoanThanhToan.checkSearch(tenChuTaiKhoan) || taiKhoanTietKiem.checkSearch(tenChuTaiKhoan)) {
+                            if (taiKhoanThanhToan.checkSearch(tenChuTaiKhoan) || taiKhoanTietKiem.checkSearch(tenChuTaiKhoan)||taiKhoanThanhToan.checkDelete(tenChuTaiKhoan) || taiKhoanTietKiem.checkDelete(tenChuTaiKhoan) ) {
                                 taiKhoanThanhToan.search(tenChuTaiKhoan);
                                 taiKhoanTietKiem.search(tenChuTaiKhoan);
                             }
                             break;
                         case 2:
-                            System.out.println("Nhập mã cần tìm kiếm");
-                            int maTaiKhoan = scanner1.nextInt();
-                            if (taiKhoanThanhToan.checkDelete(maTaiKhoan) || taiKhoanTietKiem.checkDelete(maTaiKhoan)) {
-                                taiKhoanThanhToan.search(maTaiKhoan);
-                                taiKhoanTietKiem.search(maTaiKhoan);
-                            }
+//                            System.out.println("Nhập mã cần tìm kiếm");
+//                            int maTaiKhoan = scanner1.nextInt();
+//                            if (taiKhoanThanhToan.checkDelete(maTaiKhoan) || taiKhoanTietKiem.checkDelete(maTaiKhoan)) {
+//                                taiKhoanThanhToan.search(maTaiKhoan);
+//                                taiKhoanTietKiem.search(maTaiKhoan);
+//                            }
                             break;
                         case 3:
                             break;

@@ -95,17 +95,17 @@ public class BookingServiceImpl implements BookingService {
     }
 
 
-//    public void ngayThang(){
-//        Date date = new Date();
-//        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-//        String month = String.valueOf(localDate.getMonthValue());
-//
-//        for (Booking booking : bookings){
-//            String[] ngay =  booking.getNgayBatDau().split("/");
-//            if (ngay[1].equals(month)){
-//                System.out.println(booking);
-//            }
-//        }
-//
-//    }
+    public Set<Booking> ngayThang(){
+        Date date = new Date();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        String month = String.valueOf(localDate.getMonthValue());
+
+        for (Booking booking : bookings){
+            String[] ngay =  booking.getNgayBatDau().split("/");
+            if (ngay[1].equals(month)){
+               break;
+            }
+        }
+        return bookings;
+    }
 }
