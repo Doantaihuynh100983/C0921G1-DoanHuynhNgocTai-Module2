@@ -137,4 +137,8 @@ public class CustomerServiceImpl implements CustomerService {
         return listString;
     }
 
+    public List<Customer> customers(){
+        return customers;
+    }
+
 }

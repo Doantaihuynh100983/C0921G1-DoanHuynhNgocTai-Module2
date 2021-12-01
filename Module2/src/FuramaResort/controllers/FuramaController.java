@@ -143,7 +143,7 @@ public class FuramaController {
                                         case 2:
                                             int choice5 = 0;
                                             while (choice5 != 4) {
-//                                                try {
+                                                try {
                                                     System.out.println("1. Add New Villa");
                                                     System.out.println("2. Add New Room");
                                                     System.out.println("3. Add New House");
@@ -173,9 +173,9 @@ public class FuramaController {
                                                             break;
 
                                                     }
-//                                                } catch (NumberFormatException n) {
-//                                                    System.err.println("Bạn Không Được Nhập Chữ");
-//                                                }
+                                                } catch (NumberFormatException n) {
+                                                    System.err.println("Bạn Không Được Nhập Chữ");
+                                                }
                                             }
 
                                             break;
@@ -274,14 +274,11 @@ public class FuramaController {
                                             break;
                                         case 2:
                                             System.out.print("============================================\n");
+                                            promotionService.voucherKhuyenMai();
+//                                            bookingService.ngayThang();
                                             System.out.print("============================================\n");
                                             break;
                                         case 3:
-                                            System.out.print("============================================\n");
-                                            System.out.println(" Return main menu ");
-                                            System.out.print("============================================\n");
-                                            break;
-                                        case 4:
                                             break;
                                         default:
                                             System.err.println("Bạn nhập vào số từ 1 - 4 nha !!!");
@@ -294,6 +291,7 @@ public class FuramaController {
                             break;
                         case 6:
                             System.exit(0);
+                            break;
                         default:
                             System.err.println("Bạn nhập vào số từ 1 - 6 nha !!!");
                             break;

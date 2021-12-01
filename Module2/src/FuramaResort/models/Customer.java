@@ -1,6 +1,7 @@
 package FuramaResort.models;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Customer extends Person implements Serializable {
     private String loaiKhach;
@@ -37,5 +38,18 @@ public class Customer extends Person implements Serializable {
     public String toString() {
         return getMaSo()+","+getHoTen()+","+getNgaySinh()+","+getGioiTinh()+","+getSoCmnd()+","+getSoDienThoai()
                 +","+getEmail()+","+getLoaiKhach()+","+getDiaChi();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(getMaSo(), customer.getMaSo());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getMaSo());
     }
 }

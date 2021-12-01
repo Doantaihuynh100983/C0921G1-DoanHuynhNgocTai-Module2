@@ -11,7 +11,7 @@ import java.util.*;
 public class FacilityServiceImpl implements FacilityService {
     static Map<Facility, Integer> myMap = new LinkedHashMap<>();
     Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
-
+    BookingServiceImpl bookingService = new BookingServiceImpl();
     static {
         myMap.put(new Villa("SVVL-0000", "Villa", 50.2, 60.33, 3, "Tháng", "VIP ", 20.3, 5), 1);
         myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
@@ -26,21 +26,22 @@ public class FacilityServiceImpl implements FacilityService {
         for (Map.Entry<Facility, Integer> entry : entrySet) {
             System.out.println(entry.getKey());
         }
+
     }
 
 
-
-    public void disPlayFacilityMainTenance(){
+    // mã dịch vụ Facility bằng với tên dịch vụ bên booking
+    public void disPlayFacilityMainTenance() {
         BookingServiceImpl bookingService = new BookingServiceImpl();
         Set<Booking> bookings = bookingService.ngayThang();
-        Map<Facility , Integer> facilityIntegerMap = new LinkedHashMap<>();
-        for (Booking booking : bookings){
-            for (Map.Entry<Facility, Integer> entry : entrySet){
-                if (entry.getKey().getMaDichVu().equals(booking.getTenDichVu())){
+        Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+        for (Booking booking : bookings) {
+            for (Map.Entry<Facility, Integer> entry : entrySet) {
+                if (entry.getKey().getMaDichVu().equals(booking.getTenDichVu())) {
                     if (!facilityIntegerMap.containsKey(entry.getKey())) {
                         facilityIntegerMap.put(entry.getKey(), 1);
                     } else {
-                        facilityIntegerMap.put(entry.getKey(), facilityIntegerMap.get(entry.getKey())+1);
+                        facilityIntegerMap.put(entry.getKey(), facilityIntegerMap.get(entry.getKey()) + 1);
                     }
                 }
             }
@@ -53,9 +54,11 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     ValidateFacility valiDate = new ValidateFacility();
+
     @Override
     public void addVilla() {
         Villa villa1 = new Villa();
+        bookingService.disPlay();
         villa1.setMaDichVu(valiDate.maVilla());
         villa1.setTenDichVu(valiDate.tenDichVu());
         villa1.setDienTichSuDung(valiDate.dienTichSuDung());
@@ -74,6 +77,7 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void addRoom() {
         Room room1 = new Room();
+        bookingService.disPlay();
         room1.setMaDichVu(valiDate.maRoom());
         room1.setTenDichVu(valiDate.tenDichVu());
         room1.setDienTichSuDung(valiDate.dienTichSuDung());
@@ -89,6 +93,7 @@ public class FacilityServiceImpl implements FacilityService {
     @Override
     public void addHouse() {
         House house1 = new House();
+        bookingService.disPlay();
         house1.setMaDichVu(valiDate.maHouse());
         house1.setTenDichVu(valiDate.tenDichVu());
         house1.setDienTichSuDung(valiDate.dienTichSuDung());
@@ -101,8 +106,6 @@ public class FacilityServiceImpl implements FacilityService {
         disPlay();
 
     }
-
-
 
 
 }
