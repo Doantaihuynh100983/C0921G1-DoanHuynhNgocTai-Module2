@@ -12,14 +12,18 @@ public class PromotionServiceImpl {
     Set<Booking> bookings = new TreeSet<>(new BookingComparator());
       CustomerServiceImpl customerService = new CustomerServiceImpl();
       List<Customer> customerList =customerService.customers();
-        Customer customer = new Customer();
+      Customer customer = new Customer();
     public void danhSachKhachHang(String nhapNam) {
         bookings.addAll(bookingService.booKing());
         for (Booking booking : bookings){
-           String[] ngay =  booking.getNgayBatDau().split("/");
-           if (ngay[2].equals(nhapNam)){
-               System.out.println(booking);
-           }
+            for (Customer customes : customerList) {
+                String[] ngay = booking.getNgayBatDau().split("/");
+                if (ngay[2].equals(nhapNam)) {
+                   if (booking.getMaKhachHang().equals(customes.getMaSo())){
+                       System.out.println(customes);
+                   }
+                }
+            }
         }
     }
 
