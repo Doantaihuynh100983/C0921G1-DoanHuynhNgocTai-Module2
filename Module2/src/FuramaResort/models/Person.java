@@ -15,6 +15,7 @@ public abstract class Person  implements Serializable {
     }
 
     public Person(String maSo, String hoTen, String ngaySinh, String gioiTinh, int soCmnd, int soDienThoai, String email) {
+
         this.maSo = maSo;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -23,6 +24,7 @@ public abstract class Person  implements Serializable {
         this.soDienThoai = soDienThoai;
         this.email = email;
     }
+
 
     public String getHoTen() {
         return hoTen;

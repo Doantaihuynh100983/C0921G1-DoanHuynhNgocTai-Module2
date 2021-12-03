@@ -198,7 +198,7 @@ public class ValidateFacility {
         while (true) {
             System.out.println("Nhập dịch vụ miễn phí đi kèm");
             dichVuDiKem = scanner.nextLine();
-            Pattern p = Pattern.compile("^[a-z]$");
+            Pattern p = Pattern.compile("(?=.*?[A-Z])(?=.*?[a-z])");
             if (p.matcher(dichVuDiKem).find()) {
                 break;
             } else {

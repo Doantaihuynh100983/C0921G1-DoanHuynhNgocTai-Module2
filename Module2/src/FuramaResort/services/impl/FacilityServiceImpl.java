@@ -13,10 +13,12 @@ public class FacilityServiceImpl implements FacilityService {
     Set<Map.Entry<Facility, Integer>> entrySet = myMap.entrySet();
     BookingServiceImpl bookingService = new BookingServiceImpl();
     static {
-        myMap.put(new Villa("SVVL-0000", "Villa", 50.2, 60.33, 3, "Tháng", "VIP ", 20.3, 5), 1);
-        myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
-        myMap.put(new Room("HOVL-0009", "Room", 55.3, 70.33, 3, "Năm", "ĂN UỐNG"), 1);
-        myMap.put(new House("ROVL-0009", "House", 50.2, 60.33, 3, "Ngày", "VIP", 3), 5);
+        myMap.put(new Villa("SVVL-0000", "Villa", 50.2, 60.33, 3, "Tháng", "Vip ", 20.3, 5), 1);
+        myMap.put(new Room("SVRO-0009", "Room", 55.3, 70.33, 3, "Năm", "Vip"), 1);
+        myMap.put(new Room("SVRO-0009", "Room", 55.3, 70.33, 3, "Năm", "Vip"), 1);
+        myMap.put(new Room("SVRO-0009", "Room", 55.3, 70.33, 3, "Năm", "Vip"), 1);
+        myMap.put(new Room("SVRO-0009", "Room", 55.3, 70.33, 3, "Năm", "Vip"), 1);
+        myMap.put(new House("SVHO-0009", "House", 50.2, 60.33, 3, "Ngày", "Vip", 3), 5);
 
     }
 
@@ -68,7 +70,7 @@ public class FacilityServiceImpl implements FacilityService {
         villa1.setTieuChuanPhong(valiDate.tieuChuanPhong());
         villa1.setDienTichHoBoi(valiDate.dienTichHoBoi());
         villa1.setSoTang(valiDate.soTang());
-
+        myMap.put(villa1,1);
         disPlay();
 
     }
@@ -85,7 +87,7 @@ public class FacilityServiceImpl implements FacilityService {
         room1.setSoLuongNguoiThueToiDa(valiDate.soLuongNguoiThue());
         room1.setKieuThue(valiDate.kieuThue());
         room1.setDichVuMienPhiDiKem(valiDate.dichVuDiKem());
-
+        myMap.put(room1,1);
         disPlay();
     }
 
@@ -102,7 +104,7 @@ public class FacilityServiceImpl implements FacilityService {
         house1.setKieuThue(valiDate.kieuThue());
         house1.setTieuChuanPhong(valiDate.tieuChuanPhong());
         house1.setSoTang(valiDate.soTang());
-
+        myMap.put(house1,1);
         disPlay();
 
     }

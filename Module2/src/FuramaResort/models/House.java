@@ -15,6 +15,7 @@ public class House extends Facility {
     }
 
     public House() {
+
     }
 
     public String getTieuChuanPhong() {
