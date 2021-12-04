@@ -58,7 +58,7 @@ public class Validate {
     }
 
 
-    public int soThe() {
+    public int soThe() throws NotFoundBankAccountException{
         int soThe;
         while (true) {
             try {
@@ -66,6 +66,9 @@ public class Validate {
                 soThe = Integer.parseInt(scanner.nextLine());
                 if (soThe > 0) {
                     break;
+                }
+                else {
+                    throw new NotFoundBankAccountException();
                 }
             } catch (Exception e) {
                 System.err.println("Loi nhap");

@@ -1,6 +1,7 @@
 package quan_ly_ngan_hang.servcie;
 
 
+import quan_ly_ngan_hang.validate.NotFoundBankAccountException;
 import quan_ly_ngan_hang.validate.Validate;
 import quan_ly_ngan_hang.models.TaiKhoanThanhToan;
 import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanThanhToanSevice;
@@ -23,7 +24,11 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
         newTaiKhoanThanhToan.setMaTaiKhoan(valiDate.maTaiKhoan());
         newTaiKhoanThanhToan.setTenChuTaiKhoan(valiDate.tenChuTaiKhoan());
         newTaiKhoanThanhToan.setNgayTaoTaiKhoan(valiDate.ngayTaoTaiKhoan());
-        newTaiKhoanThanhToan.setSoThe(valiDate.soThe());
+        try {
+            newTaiKhoanThanhToan.setSoThe(valiDate.soThe());
+        } catch (NotFoundBankAccountException e) {
+            e.printStackTrace();
+        }
         newTaiKhoanThanhToan.setSoTienTrongThe(valiDate.soTienTrongThe());
 
         taiKhoanThanhToans.add(newTaiKhoanThanhToan);
