@@ -1,4 +1,4 @@
-package thi_module2.vallidate;
+package thi_module2.exception;
 
 public class NotFoundProductException extends Exception{
     public NotFoundProductException() {

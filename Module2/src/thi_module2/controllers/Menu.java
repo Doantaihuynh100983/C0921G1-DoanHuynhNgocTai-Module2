@@ -1,6 +1,7 @@
 package thi_module2.controllers;
+
 import thi_module2.service.DienThoaiServiceImpl;
-import thi_module2.vallidate.NotFoundProductException;
+import thi_module2.exception.NotFoundProductException;
 import thi_module2.vallidate.Validate;
 
 import java.util.Scanner;
@@ -48,7 +49,7 @@ public class Menu {
                                         System.err.println("Không có chữ năng này !!");
                                         break;
                                 }
-                            }catch (NumberFormatException numberFormatException){
+                            } catch (NumberFormatException numberFormatException) {
                                 System.err.println("Không được nhập chữ nha !!!");
                             }
                         }
@@ -93,7 +94,7 @@ public class Menu {
                         System.err.println("Không có chức năng này  !!!");
                         break;
                 }
-            }catch (NumberFormatException numberFormatException){
+            } catch (NumberFormatException numberFormatException) {
                 System.err.println("Không được nhập chữ");
             }
         }

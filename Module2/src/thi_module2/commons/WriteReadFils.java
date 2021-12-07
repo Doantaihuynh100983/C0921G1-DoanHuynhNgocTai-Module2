@@ -45,9 +45,9 @@ public class WriteReadFils {
             fileNotFoundException.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if (br != null){
+                if (br != null) {
                     br.close();
                 }
             } catch (IOException e) {

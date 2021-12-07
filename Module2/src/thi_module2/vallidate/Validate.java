@@ -1,19 +1,21 @@
 package thi_module2.vallidate;
 
-import thi.service.QuanLyNganHangSerrvce;
-import thi.vallidate.NotFoundBankAccountException;
+import thi_module2.exception.NotFoundProductException;
 import thi_module2.service.DienThoaiServiceImpl;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Validate {
-    public static final String STRINGREGEX= "(?=.*?[A-Z])(?=.*?[a-z])";
+    public static final String STRINGREGEX = "(?=.*?[A-Z])(?=.*?[a-z])";
+
     private Validate() {
     }
+
     static Scanner scanner = new Scanner(System.in);
     static DienThoaiServiceImpl dienThoaiService = new DienThoaiServiceImpl();
-    public  static  String idCanXoa() throws NotFoundProductException {
+
+    public static String idCanXoa() throws NotFoundProductException {
         String idCanXoa;
         while (true) {
             System.out.println("Nhập mã tài khoản cần xóa");
@@ -27,15 +29,15 @@ public class Validate {
         return idCanXoa;
     }
 
-    public static double giaBan(){
+    public static double giaBan() {
         double giaBan;
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời nhập giá bán");
                 giaBan = Integer.parseInt(scanner.nextLine());
                 if (giaBan > 0) {
                     break;
-                }else {
+                } else {
                     System.err.println("Bạn Phải Nhập Số Dương");
                 }
             } catch (NumberFormatException e) {
@@ -45,62 +47,61 @@ public class Validate {
         return giaBan;
     }
 
-        public static int thoiGianBaoHang(){
-            int thoiGianBaoHang;
-            while (true){
-                try {
-                    System.out.println("Mời Thời Gian Bản Hành");
-                    thoiGianBaoHang = Integer.parseInt(scanner.nextLine());
-                    if (thoiGianBaoHang > 0 && thoiGianBaoHang < 730) {
-                        break;
-                    }else {
-                        System.err.println("Bạn Phải Nhập Số Lớn Hơn 0 Ngày Và Nhỏ Hơn 730 Ngày !!!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.err.println("Không Được Nhập Chữ");
+    public static int thoiGianBaoHang() {
+        int thoiGianBaoHang;
+        while (true) {
+            try {
+                System.out.println("Mời Thời Gian Bản Hành");
+                thoiGianBaoHang = Integer.parseInt(scanner.nextLine());
+                if (thoiGianBaoHang > 0 && thoiGianBaoHang < 730) {
+                    break;
+                } else {
+                    System.err.println("Bạn Phải Nhập Số Lớn Hơn 0 Ngày Và Nhỏ Hơn 730 Ngày !!!");
                 }
+            } catch (NumberFormatException e) {
+                System.err.println("Không Được Nhập Chữ");
             }
-            return thoiGianBaoHang;
         }
+        return thoiGianBaoHang;
+    }
 
 
-        public static String quocGiaBaoHanh(){
-            String quocGiaBaoHanh;
-            while (true){
-                try {
-                    System.out.println("Mời nhập Quốc Gia Xách Tay");
-                    quocGiaBaoHanh = scanner.nextLine();
-                    if (!(quocGiaBaoHanh.equals("") || quocGiaBaoHanh.equals("Viet Nam") ||quocGiaBaoHanh.equals("VietNam"))) {
-                        break;
-                    }else {
-                        System.err.println("Bạn Không ĐƯỢC Để Trống hoặc  Nhập Việt Nam");
-                    }
-                } catch (Exception e) {
-                    System.err.println("Không Hợp Lệ");
+    public static String quocGiaBaoHanh() {
+        String quocGiaBaoHanh;
+        while (true) {
+            try {
+                System.out.println("Mời nhập Quốc Gia Xách Tay");
+                quocGiaBaoHanh = scanner.nextLine();
+                if (!(quocGiaBaoHanh.equals("") || quocGiaBaoHanh.equals("Viet Nam") || quocGiaBaoHanh.equals("VietNam"))) {
+                    break;
+                } else {
+                    System.err.println("Bạn Không ĐƯỢC Để Trống hoặc  Nhập Việt Nam");
                 }
+            } catch (Exception e) {
+                System.err.println("Không Hợp Lệ");
             }
-            return quocGiaBaoHanh;
         }
+        return quocGiaBaoHanh;
+    }
 
 
-        public static String trangThai(){
-                String trangThai;
-            while (true){
-                try {
-                    System.out.println("Mời nhập trạng thái");
-                    trangThai = scanner.nextLine();
-                    if (trangThai.equals("Dasuachua") || trangThai.equals("Chuasuachua")) {
-                        break;
-                    }else {
-                        System.err.println("Trạng Thái Chỉ Có ĐÃ SỮA CHỮA HOẶC CHƯA SỮA CHỮA !!!");
-                    }
-                } catch (Exception e) {
-                    System.err.println("Không Hợp Lệ");
+    public static String trangThai() {
+        String trangThai;
+        while (true) {
+            try {
+                System.out.println("Mời nhập trạng thái");
+                trangThai = scanner.nextLine();
+                if (trangThai.equals("Dasuachua") || trangThai.equals("Chuasuachua")) {
+                    break;
+                } else {
+                    System.err.println("Trạng Thái Chỉ Có ĐÃ SỮA CHỮA HOẶC CHƯA SỮA CHỮA !!!");
                 }
+            } catch (Exception e) {
+                System.err.println("Không Hợp Lệ");
             }
-            return trangThai;
         }
-
+        return trangThai;
+    }
 
 
     public static String tenDienThoai() {
@@ -133,15 +134,15 @@ public class Validate {
         return nhaSanXuat;
     }
 
-    public static int soLuong(){
+    public static int soLuong() {
         int soLuong;
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời Nhập Số Lượng");
                 soLuong = Integer.parseInt(scanner.nextLine());
                 if (soLuong > 0 && soLuong < 100) {
                     break;
-                }else {
+                } else {
                     System.err.println("Bạn Phải Nhập Số Lớn Hơn 0 Ngày Và Nhỏ Hơn 100 Cái !!!");
                 }
             } catch (NumberFormatException e) {
@@ -152,15 +153,15 @@ public class Validate {
     }
 
 
-    public static String soDuTrongThang(){
+    public static String soDuTrongThang() {
         String soDuTrongThang;
-        while (true){
+        while (true) {
             try {
                 System.out.println("Mời nhập trạng thái");
                 soDuTrongThang = scanner.nextLine();
                 if (soDuTrongThang.equals("")) {
                     break;
-                }else {
+                } else {
                     System.err.println("Không được để trống");
                 }
             } catch (Exception e) {

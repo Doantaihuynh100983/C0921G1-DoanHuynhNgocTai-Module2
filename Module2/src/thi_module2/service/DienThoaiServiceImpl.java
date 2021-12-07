@@ -16,13 +16,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-    public class DienThoaiServiceImpl implements DienThoaiService{
+public class DienThoaiServiceImpl implements DienThoaiService {
     List<DienThoai> dienThoaiList = new ArrayList<>();
-    public  static final String FILE_NAME = "Module2/src/thi_module2/data/mobiles.csv";
+    public static final String FILE_NAME = "Module2/src/thi_module2/data/mobiles.csv";
     Scanner scanner = new Scanner(System.in);
+
     {
         dienThoaiList = covertStringToEmployee();
     }
+
     @Override
     public void addChinhHang() {
         DienThoaiChinhHang dienThoaiChinhHang = new DienThoaiChinhHang();
@@ -45,9 +47,9 @@ import java.util.Scanner;
                 break;
 
         }
-            dienThoaiList.add(dienThoaiChinhHang);
-         List<String> stringList = new ArrayList<>();
-         stringList.add(dienThoaiChinhHang.toString());
+        dienThoaiList.add(dienThoaiChinhHang);
+        List<String> stringList = new ArrayList<>();
+        stringList.add(dienThoaiChinhHang.toString());
         WriteReadFils.writeFile(FILE_NAME, stringList, true);
     }
 
@@ -69,6 +71,7 @@ import java.util.Scanner;
         stringList.add(dienThoaiXachTay.toString());
         WriteReadFils.writeFile(FILE_NAME, stringList, true);
     }
+
     @Override
     public void disPlay() {
         for (DienThoai dienThoai : dienThoaiList) {
@@ -79,7 +82,7 @@ import java.util.Scanner;
     @Override
     public void delete(String ID) {
         for (int i = 0; i < dienThoaiList.size(); i++) {
-            if (dienThoaiList.get(i).getId().equals(ID)){
+            if (dienThoaiList.get(i).getId().equals(ID)) {
                 dienThoaiList.remove(dienThoaiList.get(i));
             }
 
@@ -127,13 +130,13 @@ import java.util.Scanner;
             arrdienThoais = line.split(",");
             if (arrdienThoais.length == 7) {
                 dienThoais.add(new DienThoaiChinhHang(arrdienThoais[0], arrdienThoais[1], Double.parseDouble(arrdienThoais[2]),
-                        Integer.parseInt(arrdienThoais[3]), arrdienThoais[4] , Integer.parseInt(arrdienThoais[5]) ,arrdienThoais[6]));
+                        Integer.parseInt(arrdienThoais[3]), arrdienThoais[4], Integer.parseInt(arrdienThoais[5]), arrdienThoais[6]));
             }
 //            String id, String tenDienThoai, double giaBan,
 //            int soLuong, String nhaSanXuat, String quocGiaXachTay, String trangThai
             if (arrdienThoais.length == 8) {
                 dienThoais.add(new DienThoaiXachTay(arrdienThoais[0], arrdienThoais[1], Double.parseDouble(arrdienThoais[2]),
-                        Integer.parseInt(arrdienThoais[3]), arrdienThoais[4], arrdienThoais[5],arrdienThoais[6],arrdienThoais[7]));
+                        Integer.parseInt(arrdienThoais[3]), arrdienThoais[4], arrdienThoais[5], arrdienThoais[6], arrdienThoais[7]));
             }
         }
         return dienThoais;
