@@ -47,7 +47,8 @@ public class Menu {
                 case 2:
                     Vallidate vallidate = new Vallidate();
                     Scanner scanner = new Scanner(System.in);
-                    try {
+                    while (true){
+                        try {
                         String  maNganHang = vallidate.maTaiKhoanCanXoa();
                         System.out.println("1 Yes \n 2 No");
                         int chon = scanner.nextInt();
@@ -61,10 +62,11 @@ public class Menu {
                             }
 
                         }
-                    } catch (NotFoundBankAccountException e) {
-                        System.out.println("Tài Khoản KHông Tồn Tại !!!");
-                    }
 
+                    } catch (NotFoundBankAccountException e) {
+                            System.err.println("Không tồn tại !!!!");
+                    }
+                    }
                     break;
                 case 3:
                     quanLyNganHangSerrvce.disPlay();

@@ -7,7 +7,6 @@ import quan_ly_ngan_hang.validate.Validate;
 import java.util.ArrayList;
 
 public class TaiKhoanTietKiemImpl implements TaiKhoanTietKiemSevice {
-    Validate valiDate = new Validate();
     static ArrayList<TaiKhoanTietKiem> taiKhoanTietKiems = new ArrayList<>();
 
     static {
@@ -19,13 +18,13 @@ public class TaiKhoanTietKiemImpl implements TaiKhoanTietKiemSevice {
     @Override
     public void add() {
         TaiKhoanTietKiem newTaiKhoanTietKiem = new TaiKhoanTietKiem();
-        newTaiKhoanTietKiem.setMaTaiKhoan(valiDate.maTaiKhoan());
-        newTaiKhoanTietKiem.setTenChuTaiKhoan(valiDate.tenChuTaiKhoan());
-        newTaiKhoanTietKiem.setNgayTaoTaiKhoan(valiDate.ngayTaoTaiKhoan());
-        newTaiKhoanTietKiem.setSoTienGuiTietKiem(valiDate.soTienGuiTietKiem());
-        newTaiKhoanTietKiem.setNgayGuiTietKiem(valiDate.ngayGuiTietKiem());
-        newTaiKhoanTietKiem.setLaiSuat(valiDate.laiSuat());
-        newTaiKhoanTietKiem.setKyHan(valiDate.kyHan());
+        newTaiKhoanTietKiem.setMaTaiKhoan(Validate.maTaiKhoan());
+        newTaiKhoanTietKiem.setTenChuTaiKhoan(Validate.tenChuTaiKhoan());
+        newTaiKhoanTietKiem.setNgayTaoTaiKhoan(Validate.ngayTaoTaiKhoan());
+        newTaiKhoanTietKiem.setSoTienGuiTietKiem(Validate.soTienGuiTietKiem());
+        newTaiKhoanTietKiem.setNgayGuiTietKiem(Validate.ngayGuiTietKiem());
+        newTaiKhoanTietKiem.setLaiSuat(Validate.laiSuat());
+        newTaiKhoanTietKiem.setKyHan(Validate.kyHan());
 
         taiKhoanTietKiems.add(newTaiKhoanTietKiem);
 

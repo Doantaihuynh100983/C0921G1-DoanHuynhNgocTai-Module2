@@ -3,11 +3,16 @@ package quan_ly_ngan_hang.validate;
 import java.util.Scanner;
 
 public class Validate {
+    static Scanner scanner = new Scanner(System.in);
 
 
-    Scanner scanner = new Scanner(System.in);
+    private Validate() {
+    }
 
-    public int maTaiKhoan() {
+
+
+
+    public static int maTaiKhoan() {
         int maTaiKhoan;
         while (true) {
             try {
@@ -24,7 +29,27 @@ public class Validate {
     }
 
 
-    public String tenChuTaiKhoan() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public  static String tenChuTaiKhoan() {
         String tenChuTaiKhoan;
         while (true) {
             try {
@@ -41,7 +66,7 @@ public class Validate {
     }
 
 
-    public String ngayTaoTaiKhoan() {
+    public  static String ngayTaoTaiKhoan() {
         String ngayTaoTaiKhoan;
         while (true) {
             try {
@@ -58,7 +83,7 @@ public class Validate {
     }
 
 
-    public int soThe() throws NotFoundBankAccountException{
+    public static int soThe() throws NotFoundBankAccountException{
         int soThe;
         while (true) {
             try {
@@ -78,7 +103,7 @@ public class Validate {
     }
 
 
-    public double soTienTrongThe() {
+    public static double soTienTrongThe() {
         double soTienTrongThe;
         while (true) {
             try {
@@ -95,7 +120,7 @@ public class Validate {
     }
 
 
-    public double soTienGuiTietKiem() {
+    public static double soTienGuiTietKiem() {
         double soTienGuiTietKiem;
         while (true) {
             try {
@@ -112,7 +137,7 @@ public class Validate {
     }
 
 
-    public String ngayGuiTietKiem() {
+    public static String ngayGuiTietKiem() {
         String ngayGuiTietKiem;
         while (true) {
             try {
@@ -129,7 +154,7 @@ public class Validate {
     }
 
 
-    public double laiSuat() {
+    public static double laiSuat() {
         double laiSuat;
         while (true) {
             try {
@@ -145,7 +170,7 @@ public class Validate {
         return laiSuat;
     }
 
-    public int kyHan() {
+    public static int kyHan() {
         int kyHan;
         while (true) {
             try {

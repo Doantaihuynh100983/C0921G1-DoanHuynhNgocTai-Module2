@@ -6,10 +6,7 @@ import thi.models.TaiKhoanNganHang;
 import thi.models.TaiKhoanThanhToan;
 import thi.models.TaiKhoanTietKiem;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class QuanLyNganHangSerrvce implements QuanLyNganHang {
     Scanner scanner = new Scanner(System.in);
@@ -75,6 +72,7 @@ public class QuanLyNganHangSerrvce implements QuanLyNganHang {
         for (TaiKhoanNganHang taiKhoanNganHang : taiKhoanNganHangs) {
             System.out.print(id++ + " -- ");
             System.out.println(taiKhoanNganHang);
+
         }
     }
 
@@ -138,7 +136,7 @@ public class QuanLyNganHangSerrvce implements QuanLyNganHang {
                         Double.parseDouble(arrTaiKhoanNganHang[3]), arrTaiKhoanNganHang[4], Double.parseDouble(arrTaiKhoanNganHang[5])
                         , Integer.parseInt(arrTaiKhoanNganHang[6])));
             }
-
+            
         }
         return taiKhoanNganHangs;
     }
@@ -150,4 +148,7 @@ public class QuanLyNganHangSerrvce implements QuanLyNganHang {
         }
         return listString;
     }
+
+
+
 }

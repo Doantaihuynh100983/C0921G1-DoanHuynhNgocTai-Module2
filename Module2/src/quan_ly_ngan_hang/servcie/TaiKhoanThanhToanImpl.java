@@ -9,7 +9,6 @@ import quan_ly_ngan_hang.servcie.servcieimpl.TaiKhoanThanhToanSevice;
 import java.util.ArrayList;
 
 public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
-    Validate valiDate = new Validate();
     static ArrayList<TaiKhoanThanhToan> taiKhoanThanhToans = new ArrayList<>();
 
     static {
@@ -21,15 +20,15 @@ public class TaiKhoanThanhToanImpl implements TaiKhoanThanhToanSevice {
     @Override
     public void add() {
         TaiKhoanThanhToan newTaiKhoanThanhToan = new TaiKhoanThanhToan();
-        newTaiKhoanThanhToan.setMaTaiKhoan(valiDate.maTaiKhoan());
-        newTaiKhoanThanhToan.setTenChuTaiKhoan(valiDate.tenChuTaiKhoan());
-        newTaiKhoanThanhToan.setNgayTaoTaiKhoan(valiDate.ngayTaoTaiKhoan());
+        newTaiKhoanThanhToan.setMaTaiKhoan(Validate.maTaiKhoan());
+        newTaiKhoanThanhToan.setTenChuTaiKhoan(Validate.tenChuTaiKhoan());
+        newTaiKhoanThanhToan.setNgayTaoTaiKhoan(Validate.ngayTaoTaiKhoan());
         try {
-            newTaiKhoanThanhToan.setSoThe(valiDate.soThe());
+            newTaiKhoanThanhToan.setSoThe(Validate.soThe());
         } catch (NotFoundBankAccountException e) {
             e.printStackTrace();
         }
-        newTaiKhoanThanhToan.setSoTienTrongThe(valiDate.soTienTrongThe());
+        newTaiKhoanThanhToan.setSoTienTrongThe(Validate.soTienTrongThe());
 
         taiKhoanThanhToans.add(newTaiKhoanThanhToan);
 

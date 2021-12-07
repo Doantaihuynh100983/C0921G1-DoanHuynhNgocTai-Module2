@@ -93,7 +93,7 @@ public class QuanLyNganHang {
                         case 1:
                             System.out.println("Nhập tên cần tìm kiếm");
                             String tenChuTaiKhoan = scanner1.nextLine();
-                            if (taiKhoanThanhToan.checkSearch(tenChuTaiKhoan) || taiKhoanTietKiem.checkSearch(tenChuTaiKhoan)||taiKhoanThanhToan.checkDelete(tenChuTaiKhoan) || taiKhoanTietKiem.checkDelete(tenChuTaiKhoan) ) {
+                            if (taiKhoanThanhToan.checkSearch(tenChuTaiKhoan) || taiKhoanTietKiem.checkSearch(tenChuTaiKhoan) ||taiKhoanThanhToan.checkDelete(tenChuTaiKhoan) || taiKhoanTietKiem.checkDelete(tenChuTaiKhoan) ) {
                                 taiKhoanThanhToan.search(tenChuTaiKhoan);
                                 taiKhoanTietKiem.search(tenChuTaiKhoan);
                             }
